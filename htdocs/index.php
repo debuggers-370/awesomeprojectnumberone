@@ -5,10 +5,10 @@
 </div>
 
 <div><div style="color:#FF6600;">
-    <HTML>
-    <HEAD>
-        <TITLE>About Us</TITLE>
-    </HEAD>
+    <html>
+    <head>
+        <title>About Us</title>
+    </head>
     <div style="text-align: center;"><img src = "img/team.png" style="width:250px;height:250px;"></div>
     <BODY>
     <div><HR data-brackets-id='2149'>
@@ -19,6 +19,6 @@
     </div>
     <div style="color:#ffffff;">
 
-    </HTML>
+    </html>
 
     <BODY BGCOLOR="00304C">
