@@ -7,28 +7,43 @@
             padding: 0;
         }
         body {
-            font-family: 'Handlee', cursive;
+            font-family: 'Arial', cursive;
             font-size: 13pt;
-            background-color: #efefef;
+            background-color: #30b0b5;
             padding: 10px;
             margin: 0;
         }
+        #info1{
+            background-color: #607D8B;
+        }
+        #info2{
+            background-color: #607D8B;
+        }
+        #info3{
+            background-color: #607D8B;
+        }
+        #contacts {
+            background-color: #607D8B;
+        }
         h1 {
             font-size: 15pt;
-            color: #20bcd5;
+            color: #212121;
             text-align: center;
             padding: 18px 0 18px 0;
             margin: 0 0 10px 0;
         }
         h1 span {
-            border: 4px dashed #20bcd5;
+
+            background-color: #ffffff;
             padding: 10px;
+            border-radius: 10px;
         }
         p {
             padding: 0;
             margin: 0;
         }
         .img-circle {
+            background-color: #ffffff;
             border: 3px solid white;
             border-radius: 10%;
         }
@@ -39,7 +54,8 @@
             border-radius: 10px;
         }
         #header {
-            background-image: url("https://www.sololearn.com/Uploads/header.jpg");
+            /*background-image: url("https://www.sololearn.com/Uploads/header.jpg");*/
+            background-color: #607D8B;
             background-size: cover;
         }
         #header img {
@@ -170,90 +186,61 @@
     <title>About Us</title>
     <link href="https://fonts.googleapis.com/css?family=Handlee" rel="stylesheet">
 
-
-
 </head>
 
 <body>
 <!-- header start -->
 <div id="header" class="section">
     <img alt="" class="img-circle" src="img/team.png">
-    <p>About Us</p>
-    <nav>
-        <ul>
-            <li><a href="test.php">Home</a>
-            <li><a href="test.php">Dashboard</a>
-            <li><a href="test.php">Account</a>
-        </ul>
-    </nav>
+        <h1><span>About Us</span></h1>
+    <div id="nav" class="section" style="width: 150px">
+        <nav>
+            <h1>Site Navigation</h1>
+            <ul>
+                <li><a href="test.php">Home</a>
+                <li><a href="test.php">Dashboard</a>
+                <li><a href="test.php">Account</a>
+            </ul>
+        </nav>
+    </div>
 </div>
 <!-- header end -->
 
 <!-- About Me section start -->
-<div class="section">
-    <h1><span>Meet the team:</span></h1>
-    <p>
-    <ul>
-        <li><strong>Xinyi Jiang</strong></li>
-        <li><strong>James Martin</strong></li>
-        <li><strong>Catherine Xiao</strong></li>
-        <li><strong>Tony Kang</strong></li>
-        <li><strong>Quentin Kauchick</strong></li>
-        <li><strong>Owen Handel</strong></li>
-    </ul>
-    <p class="quote">Development and Business Team Members</p>
+<div id = "info1" class="section">
+    <div>
+        <h1><span>Meet the team:</span></h1>
+    </div>
+    <div class="section">
+        <ul>
+            <li><strong>Xinyi Jiang</strong></li>
+            <li><strong>James Martin</strong></li>
+            <li><strong>Catherine Xiao</strong></li>
+            <li><strong>Tony Kang</strong></li>
+            <li><strong>Quentin Kauchick</strong></li>
+            <li><strong>Owen Handel</strong></li>
+        </ul>
+    </div>
 </div>
 <!-- About Me section end -->
 
-<!-- My Schedule section start -->
-<div class="section">
+<!-- Info section start -->
+<div id = "info2" class="section">
     <h1><span>What we do:</span></h1>
-    <p>As the team behind Property Smart, we strive to bring meaningful insight to your property-based business. Our
-        software gives you a clear view of the capital expenditures of your property, and more importantly,
-        meaningful feedback about how to plan the future. Whether you just want to improve maintenance or build
-        additions, you can know exactly how much it is going to cost, which helps you avoid the hassle of unforeseen
-        costs. Get smart about your property -- Get Property Smart.&nbsp;</p>
+        <div class="section">
+            <p>At Property Smart, we strive to bring meaningful insight to your property-based
+                business. Our software gives you a clear view of you properties' capital expenditures, and more
+                importantly, gives you meaningful feedback about how to plan the future. Whether you just want to
+                improve maintenance or build additions, you can know exactly how much it is going to cost, which
+                helps you avoid the hassle of unforeseencosts. Get smart about your property -- Get Property
+                Smart.&nbsp;</p>
+        </div>
 </div>
-<!-- My Schedule section end -->
-
-
-<!-- My Skills section start -->
-<!--<div class="section">-->
-    <!--<h1><span>My Skills</span></h1>-->
-    <!--<ul>-->
-        <!--<li>HTML <br />-->
-            <!--<progress min="0" max="100" value="80"></progress>-->
-        <!--</li>-->
-        <!--<li>Java <br />-->
-            <!--<progress min="0" max="100" value="80"></progress>-->
-        <!--</li>-->
-        <!--<li>Python <br />-->
-            <!--<progress min="0" max="100" value="40"></progress>-->
-        <!--</li>-->
-    <!--</ul>-->
-<!--</div>-->
-<!-- My Skills section end -->
-
-
-<!--&lt;!&ndash; Media section start &ndash;&gt;-->
-<!--<div class="section">-->
-    <!--<h1><span>My Media</span></h1>-->
-    <!--<iframe height="150" width="300" src="https://www.youtube.com/embed/Q6_5InVJZ88" allowfullscreen frameborder="0"></iframe>-->
-<!--</div>-->
-<!--&lt;!&ndash; Media section end &ndash;&gt;-->
+<!-- Info section end -->
 
 <!-- Form section start -->
-<div class="section">
+<div id = "info3" class="section">
     <h1><span>Contact Us</span></h1>
-
-    <svg class="face" height="100" width="100">
-        <circle cx="50" cy="50" r="50" fill="#FDD835"/>
-        <circle cx="30" cy="30" r="10" fill="#FFFFFF"/>
-        <circle cx="70" cy="30" r="10" fill="#FFFFFF"/>
-        <circle cx="30" cy="30" r="5" fill="#000000"/>
-        <circle cx="70" cy="30" r="5" fill="#000000"/>
-        <path d="M 30 70 q 20 20 40 0" stroke="#FFFFFF" stroke-width="5" fill="none" />
-    </svg>
 
     <form>
         <input name="name" placeholder="Name" type="text" required /><br/>
@@ -281,7 +268,7 @@
 </div>
 <!-- Contacts section end -->
 
-<div class="copyright">
+<div id = "copyright" class="copyright">
     &copy; 2017 Property Smart. All rights reserved.
 </div>
 
