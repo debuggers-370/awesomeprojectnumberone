@@ -46,6 +46,14 @@ body {
     margin-right: -250px;
 }
 
+#logo {
+    width: 50%;
+    height: 10%;
+    position: fixed;
+    padding: 15px;
+    left: 300px;
+
+}
 
 /* Sidebar Styles */
 /*.logo {
@@ -57,9 +65,9 @@ body {
 {
 
     float: left;
-    position:left;
-    width: 300px;
-    padding: 10px;
+    position: fixed;
+    width: 100px;
+    padding: 50px;
 }
 
 
