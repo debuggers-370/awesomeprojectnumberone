@@ -53,3 +53,4 @@ fabric.properties
 /conf/
 
 /.idea/modules.xml
+/.idea/workspace.xml
