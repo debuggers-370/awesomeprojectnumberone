@@ -53,5 +53,5 @@ fabric.properties
 /conf/
 
 /.idea/modules.xml
-/.idea/workspace.xml
 /.idea/codeStyleSettings.xml
+/awesomeprojectnumberone.iml
