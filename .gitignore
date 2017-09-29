@@ -52,8 +52,9 @@ fabric.properties
 
 #no stack configs
 conf
-conf/*
 
 /.idea/modules.xml
 /.idea/codeStyleSettings.xml
 /awesomeprojectnumberone.iml
+/.idea/inspectionProfiles/
+/.idea/misc.xml
