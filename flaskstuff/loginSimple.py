@@ -6,7 +6,7 @@ from wtforms import Form, TextField, TextAreaField, validators, StringField, Sub
 DEBUG = True
 app = Flask(__name__)
 app.config.from_object(__name__)
-app.config['SECRET_KEY'] = '7d441f27d441f27567d441f2b6176a'
+app.config['SECRET_KEY'] = '2'
 
 
 class RegisterForm(Form):
@@ -51,7 +51,7 @@ def login():
         print name, " ", password
 
         if form.validate():
-            # Save the comment here.
+
             return render_template('login.html', form=form)
         else:
             flash('Error: All the form fields are required. ')
@@ -69,6 +69,10 @@ def contact():
 @app.route("/", methods=['GET', 'POST'])
 def home():
     return render_template('homepage.html')
+
+@app.route("/profilePage", methods=['GET', 'POST'])
+def profile():
+    return render_template('profilePage.html')
 
 if __name__ == "__main__":
     app.run()
