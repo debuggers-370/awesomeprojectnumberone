@@ -50,8 +50,12 @@ crashlytics.properties
 crashlytics-build.properties
 fabric.properties
 
-/conf/
+#no stack configs
+conf
 
 /.idea/modules.xml
-/.idea/workspace.xml
 /.idea/codeStyleSettings.xml
+/awesomeprojectnumberone.iml
+/.idea/inspectionProfiles/
+/.idea/misc.xml
+/.idea/sqldialects.xml
