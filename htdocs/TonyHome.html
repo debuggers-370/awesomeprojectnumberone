@@ -48,14 +48,15 @@
     <div class="w3-row">
         <!-- Left Column -->
         <div class="w3-col m3">
-            <form class="w3-container w3-card-4 w3-light-grey w3-margin-right w3-margin-bottom ">
+            <form class="w3-container w3-card-4 w3-light-grey w3-margin-right w3-margin-bottom " name="register">
                 <p><label>ID</label>
                     <input class="w3-input w3-border" name="ID" type="email"></p>
 
                 <p><label>PW</label>
                     <input class="w3-input w3-border" name="PW" type="password"></p>
 
-                <button class="w3-btn w3-gray">Login</button>
+                <button class="w3-btn w3-gray" onclick="setCookie()">Login</button>
+                <!--<button class="w3-btn w3-gray" onclick="checkCookie()">Try Cookies</button>-->
                 <br>
             </form>
             <!-- End Left Column -->
