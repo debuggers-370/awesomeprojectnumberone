@@ -3,6 +3,7 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-grey.css">
+<script src="https://www.w3schools.com/lib/w3.js"></script>
 <head>
 
     <style>
@@ -174,19 +175,9 @@
 </head>
 
 <body>
-<div class="w3-top">
-    <div class="w3-bar w3-white w3-wide w3-padding w3-card-2">
-        <a href="#" class="w3-bar-item w3-button"><b>ManageIT</b></a>
-        <meta charset="UTF-8">
-        <div class="w3-right w3-hide-small">
-            <a href="about.html" class="w3-bar-item w3-button">About</a>
-            <a href="contact.html" class="w3-bar-item w3-button">Contact</a>
-            <a href="profilePage.html" class="w3-bar-item w3-button">Profile</a>
-            <a href="carousel.html" class="w3-bar-item w3-button">Carousel Example</a>
-        </div>
-        <!-- <link rel="stylesheet" type="text/css" href="customcssStyle.css"> -->
-    </div>
-</div>
+
+<div w3-include-html="Nav.html"></div>
+
 <!-- header start -->
 <header class="w3-display-container w3-content w3-center" style="max-width:1500px">
     <img class="w3-image" src="img/header.jpg" alt="intro picture" width="1500" height="600">
@@ -233,7 +224,7 @@
         <li class="w3-bar">
             <img src="img/avatar5.png" class="w3-bar-item w3-circle w3-hide-small" style="width:85px">
             <div class="w3-bar-item">
-                <span class="w3-large">Quentin Kauchick</span><br>
+                <span class="w3-large">Quintin Kauchick</span><br>
             </div>
         </li>
         <li class="w3-bar">
@@ -338,9 +329,11 @@
 </div>
 <!-- Contacts section end -->
 
-<div id = "copyright" class="copyright">
-    &copy; 2017 Property Smart. All rights reserved.
-</div>
-
+<footer class="w3-container">
+    <p class="w3-right w3-text-grey">&copy; 2017 Property Smart. All rights reserved.</p>
+</footer>
+<script>
+    w3.includeHTML();
+</script>
 </body>
 </html>
