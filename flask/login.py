@@ -3,6 +3,9 @@ from flask import Flask, app
 import flask
 from flask_login import LoginManager
 
+from flaskstuff.login import LoginForm
+
+
 class User(ABC):
 
     authenticated = False
@@ -26,6 +29,10 @@ login_manager = LoginManager()
 @login_manager.user_loader
 def load_user(user_id):
     pass #TODO: unimplemented for the moment
+
+
+def login_user(user):
+    pass
 
 
 @app.route('/login', methods=['GET', 'POST'])
