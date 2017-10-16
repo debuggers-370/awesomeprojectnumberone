@@ -14,10 +14,12 @@ app.config['SECRET_KEY'] = '2'
 Bootstrap(app)
 login_manager = LoginManager()
 
+
 class LoginForm(Form):
     username = StringField('username', validators=[InputRequired(), Length(min=4, max=15)])
     password = PasswordField('password', validators=[InputRequired(), Length(min=8, max=80)])
     remember = BooleanField('remember me')
+
 
 class RegisterForm(Form):
     email = StringField('email', validators=[InputRequired(), Email(message='Invalid email'), Length(max=50)])
@@ -44,9 +46,6 @@ class User(ABC):
         return self.id
 
 
-
-
-
 @login_manager.user_loader
 def load_user(user_id):
     pass  # TODO: unimplemented for the moment
@@ -62,19 +61,25 @@ def is_safe_url(target):
 @app.route('/')
 def index():
     return render_template('Home.html')
+
+
 @app.route('/about')
 def about():
     return render_template('about.html')
+
+
 @app.route('/Profile')
 def prof():
     return render_template('Profile.html')
+
+
 @app.route('/carousel')
 def caro():
     return render_template('carousel.html')
 
+
 @app.route('/login', methods=['GET', 'POST'])
 def login():
-
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
