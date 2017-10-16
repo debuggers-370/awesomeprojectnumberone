@@ -3,6 +3,7 @@ from flask import Flask, request, url_for, redirect, render_template, flash
 from flask_login import LoginManager, login_user
 from flask_wtf import Form, FlaskForm
 from wtforms import StringField, BooleanField, PasswordField, validators
+from wtforms.validators import InputRequired, Email, Length
 from urllib.parse import urlparse, urljoin
 from flask_bootstrap import Bootstrap
 
@@ -13,10 +14,15 @@ app.config['SECRET_KEY'] = '2'
 Bootstrap(app)
 login_manager = LoginManager()
 
-class LoginForm(FlaskForm):
-    name = StringField('Name:', validators=[validators.required()])
-    password = PasswordField('Password:', validators=[validators.required(), validators.Length(min=3, max=35)])
-    remember_me = BooleanField('remember_me', default=False)
+class LoginForm(Form):
+    username = StringField('username', validators=[InputRequired(), Length(min=4, max=15)])
+    password = PasswordField('password', validators=[InputRequired(), Length(min=8, max=80)])
+    remember = BooleanField('remember me')
+
+class RegisterForm(Form):
+    email = StringField('email', validators=[InputRequired(), Email(message='Invalid email'), Length(max=50)])
+    username = StringField('username', validators=[InputRequired(), Length(min=4, max=15)])
+    password = PasswordField('password', validators=[InputRequired(), Length(min=8, max=80)])
 
 
 class User(ABC):
@@ -67,13 +73,15 @@ def caro():
     return render_template('carousel.html')
 
 @app.route('/login', methods=['GET', 'POST'])
-def login1():
+def login():
+
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
-
-        return render_template('Profile.html', username=username, password=password)
-
+        cond = username.isupper() or username.islower()
+        if cond is True:
+            return render_template('Profile.html', username=username, password=password)
+    flash('Invalid password provided', 'error')
     return render_template('login.html')
 
 
