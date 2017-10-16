@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SignIn</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+</head>
+
+<style>
+</style>
+<body>
+{% include 'Nav.html' %}
+<div>
+    <div class="w3-container w3-display-middle" id="loginform">
+        <img class="w3-center" src="../static/ManageIT.jpg" alt="Logo" style="width: 250px;">
+        <form method="POST" action="/login" class=" w3-panel w3-padding-32 w3-card-4 w3-light-grey">
+            <h1>SIGN IN</h1>
+
+
+            <label><b>Username</b></label>
+            <input class="w3-input " type="text" name="username">
+
+            <label><b>Password</b></label>
+            <input class="w3-input" type="password" name="password">
+
+            <input class="w3-check" type="checkbox">
+            <label>Remember me</label>
+
+            <br>
+            <button class="w3-button w3-gray w3-section" type="submit" value="submit" style="width:100%">SIGN IN</button>
+            <br>
+            <a href="#" class="">Forgot username?</a>
+            <a href="#" class="">Forgot password?</a>
+            <br>
+            <a href="#" class="">Create an account?</a>
+        </form>
+
+    </div>
+
+</div>
+
+</body>
+</html>
