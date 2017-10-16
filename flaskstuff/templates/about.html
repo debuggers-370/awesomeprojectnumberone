@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-grey.css">
+<script src="https://www.w3schools.com/lib/w3.js"></script>
 <head>
+
     <style>
         html {
             margin: 0;
@@ -9,21 +14,19 @@
         body {
             font-family: 'Arial', cursive;
             font-size: 13pt;
-            background-color: #30b0b5;
+            background-color: white;
             padding: 10px;
             margin: 0;
         }
         #info1{
             background-color: #607D8B;
         }
-        #info2{
-            background-color: #607D8B;
-        }
+
         #info3{
             background-color: #607D8B;
         }
         #contacts {
-            background-color: #607D8B;
+            background-color: #ffffff;
         }
         h1 {
             font-size: 15pt;
@@ -32,7 +35,9 @@
             padding: 18px 0 18px 0;
             margin: 0 0 10px 0;
         }
+
         h1 span {
+
             background-color: #ffffff;
             padding: 10px;
             border-radius: 10px;
@@ -47,29 +52,13 @@
             border-radius: 10%;
         }
         .section {
-            background-color: #fff;
+            background-color: #ffffff;
             padding: 15px;
             margin-bottom: 10px;
             border-radius: 10px;
         }
-        #header {
-            background-color: #607D8B;
-            background-size: cover;
-        }
-        #header img {
-            display: block;
-            width: 80px;
-            height: 80px;
-            margin: auto;
-        }
-        #header p {
-            font-size: 25pt;
-            color: #3b464c;
-            padding-top: 5px;
-            margin: 0;
-            font-weight: bold;
-            text-align: center;
-        }
+
+
         .quote {
             font-size: 12pt;
             text-align: right;
@@ -116,15 +105,15 @@
         }
         hr {
             border: 0;
-            height: 1px;
-            background: #f36f48;
+            height: 3px;
+            background: gray;
         }
         form {
             text-align: center;
             margin-top: 0;
         }
         .submit {
-            background-color: #3fb6b2;
+            background-color: #000000;
             padding: 12px 45px;
             border-radius: 5px;
             cursor: pointer;
@@ -177,91 +166,174 @@
             font-size: 8pt;
             text-align: right;
             padding-bottom: 10px;
-            color: grey;
+
         }
+
     </style>
-    <title>About Us</title>
-    <link href="https://fonts.googleapis.com/css?family=Handlee" rel="stylesheet">
+
 
 </head>
 
 <body>
+
+{% include 'Nav.html' %}
+
 <!-- header start -->
-<div id="header" class="section">
-    <img alt="" class="img-circle" src="img/team.png">
-        <h1><span>About Us</span></h1>
-    <div id="nav" class="section" style="width: 150px">
-        <nav>
-            <h1>Site Navigation</h1>
-            <ul>
-                <li><a href="/">Home</a>
-                <li><a href="phpinfo.php">Dashboard</a>
-                <li><a href="phpinfo.php">Account</a>
-            </ul>
-        </nav>
+<header class="w3-display-container w3-content w3-center" style="max-width:1500px">
+    <img class="w3-image" src="../static/header.jpg" alt="intro picture" width="1500" height="600">
+    <div class="w3-display-middle w3-padding-large  w3-wide w3-center " style="border:4px solid white">
+        <h1 class="w3-hide-medium w3-hide-small w3-xxxlarge">About Us</h1>
+
+
+
     </div>
-</div>
+</header>
 <!-- header end -->
 
-<!-- About Me section start -->
-<div id = "info1" class="section">
-    <div>
-        <h1><span>Meet the team:</span></h1>
-    </div>
-    <div class="section">
-        <ul>
-            <li><strong>Xinyi Jiang</strong></li>
-            <li><strong>James Martin</strong></li>
-            <li><strong>Catherine Xiao</strong></li>
-            <li><strong>Tony Kang</strong></li>
-            <li><strong>Quentin Kauchick</strong></li>
-            <li><strong>Owen Handel</strong></li>
-        </ul>
-    </div>
+<!-- About us section start -->
+
+<div class="w3-container">
+    <h2 class="w3-myfont w3-center">Meet the team</h2>
+    <ul class="w3-ul w3-card-4 w3-round">
+        <li class="w3-bar">
+            <img src="../static/avatar1.png" class="w3-bar-item w3-circle w3-hide-small" style="width:85px">
+            <div class="w3-bar-item">
+                <span class="w3-large">Xinyi Jiang</span><br>
+            </div>
+        </li>
+
+        <li class="w3-bar">
+            <img src="../static/avatar2.png" class="w3-bar-item w3-circle w3-hide-small" style="width:85px">
+            <div class="w3-bar-item">
+                <span class="w3-large">James Martin</span><br>
+            </div>
+        </li>
+
+        <li class="w3-bar">
+            <img src="../static/avatar3.png" class="w3-bar-item w3-circle w3-hide-small" style="width:85px">
+            <div class="w3-bar-item">
+                <span class="w3-large">Catherine Xiao</span><br>
+            </div>
+        </li>
+        <li class="w3-bar">
+            <img src="../static/avatar4.png" class="w3-bar-item w3-circle w3-hide-small" style="width:85px">
+            <div class="w3-bar-item">
+                <span class="w3-large">Tony Kang</span><br>
+            </div>
+        </li>
+        <li class="w3-bar">
+            <img src="../static/avatar5.png" class="w3-bar-item w3-circle w3-hide-small" style="width:85px">
+            <div class="w3-bar-item">
+                <span class="w3-large">Quintin Kauchick</span><br>
+            </div>
+        </li>
+        <li class="w3-bar">
+            <img src="../static/avatar6.png" class="w3-bar-item w3-circle w3-hide-small" style="width:85px">
+            <div class="w3-bar-item">
+                <span class="w3-large">Owen Handel</span><br>
+            </div>
+        </li>
+    </ul>
 </div>
 <!-- About Me section end -->
+<!-- dividing part -->
+<div class="w3-row-padding">
+    <div class="w3-col s3 w3-container">
+            <img src="../static/house1.jpg" alt="Nature" style="width:100%">
+    </div>
+    <div class="w3-col s3 w3-container">
+            <img src="../static/house2.jpg" alt="Fjords" style="width:100%">
 
+    </div>
+    <div class="w3-col s3 w3-container">
+
+            <img src="../static/house3.jpg" alt="Mountains" style="width:100%">
+
+    </div>
+    <div class="w3-col s3 w3-container">
+
+            <img src="../static/house4.jpg" alt="Lights" style="width:100%">
+
+    </div>
+</div><br>
+<!--dividing part end-->
+<hr>
 <!-- Info section start -->
-<div id = "info2" class="section">
-    <h1><span>What we do:</span></h1>
-        <div class="section">
+
+<div id = "info2" class="w3-container sand w3-xlarge w3-serif w3-panel w3-round-xlarge" style="padding: 5%">
+    <h1 class="w3-xxlarge">What we do</h1>
+
             <p>At Property Smart, we strive to bring meaningful insight to your property-based
                 business. Our software gives you a clear view of you properties' capital expenditures, and more
                 importantly, gives you meaningful feedback about how to plan the future. Whether you just want to
                 improve maintenance or build additions, you can know exactly how much it is going to cost, which
                 helps you avoid the hassle of unforeseencosts. Get smart about your property -- Get Property
                 Smart.&nbsp;</p>
-        </div>
+
 </div>
 <!-- Info section end -->
 
 <!-- Form section start -->
-<div id = "info3" class="section">
-    <h1><span>Contact Us</span></h1>
 
-    <form>
-        <input name="name" placeholder="Name" type="text" required /><br/>
-        <input name="email" placeholder="Email" type="email" required /><br/>
-        <textarea name="message" placeholder="Message" required ></textarea>
-        <input type="submit" value="SEND" class="submit" />
-    </form>
-</div>
+
+<form action="/action_page.php" class="w3-container w3-card-4 w3-light-grey  w3-margin w3-text-gray w3-round" style="padding: 3%">
+    <h2 class="w3-center">Contact Us</h2>
+
+    <div class="w3-row w3-section">
+        <div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-user"></i></div>
+        <div class="w3-rest">
+            <input class="w3-input w3-border" name="first" type="text" placeholder="First Name">
+        </div>
+    </div>
+
+    <div class="w3-row w3-section">
+        <div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-user"></i></div>
+        <div class="w3-rest">
+            <input class="w3-input w3-border" name="last" type="text" placeholder="Last Name">
+        </div>
+    </div>
+
+    <div class="w3-row w3-section">
+        <div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-envelope-o"></i></div>
+        <div class="w3-rest">
+            <input class="w3-input w3-border" name="email" type="text" placeholder="Email">
+        </div>
+    </div>
+
+    <div class="w3-row w3-section">
+        <div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-phone"></i></div>
+        <div class="w3-rest">
+            <input class="w3-input w3-border" name="phone" type="text" placeholder="Phone">
+        </div>
+    </div>
+
+    <div class="w3-row w3-section">
+        <div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-pencil"></i></div>
+        <div class="w3-rest">
+            <input class="w3-input w3-border" name="message" type="text" placeholder="Message">
+        </div>
+    </div>
+
+    <button class="w3-button w3-block w3-section w3-theme w3-ripple w3-padding">Send</button>
+
+</form>
 <!-- Form section end -->
-
 <!-- Contacts section start -->
 <div class="section" id="contacts">
     <h1><span>Follow Us</span></h1>
     <div>
         <a href="https://github.com/debuggers-370" target="_blank">
-            <img alt="github" src="img/GitHub-Mark-32px.png" />
+            <img alt="github" src="../static/GitHub-Mark-32px.png" />
         </a>
     </div>
 </div>
 <!-- Contacts section end -->
 
-<div id = "copyright" class="copyright">
-    &copy; 2017 Property Smart. All rights reserved.
-</div>
-
+<footer class="w3-container">
+    <p class="w3-right w3-text-grey">&copy; 2017 Property Smart. All rights reserved.</p>
+</footer>
+<script>
+    w3.includeHTML();
+</script>
 </body>
 </html>
