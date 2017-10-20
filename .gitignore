@@ -58,3 +58,4 @@ fabric.properties
 /.idea/inspectionProfiles/
 /.idea/misc.xml
 /.idea/sqldialects.xml
+/djangostuff/djangostuff.iml
