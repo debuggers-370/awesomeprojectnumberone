@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <title>IT</title>
@@ -102,7 +103,49 @@
 
 </body>
 
-
-
-
 </html>
+
+<?php
+
+$user = array("CS");
+array_push($user,$_POST['Major']);
+
+
+
+$conn = mysqli_connect("localhost", "root", "rained99", "managedb");
+if (mysqli_connect_errno())            # -----------  check connection error
+{
+    printf("Connect failed: %s\n", mysqli_connect_error());
+    exit(1);
+}
+print("<B> User: </B>");
+print("<br>");
+
+$users = array("user1");
+//hard coded.
+
+foreach($users as $key => $value){
+
+    $query = "select * from users";
+    $result = mysqli_query($conn, $query);
+    if ( ! ( $result = mysqli_query($conn, $query)) )      # Execute query
+    {
+        printf("Error: %s\n", mysqli_error($conn));
+        exit(1);
+    }
+
+    $printed = false;
+
+    while ($row = mysqli_fetch_assoc( $result ))
+    {
+
+
+        foreach ($row as $key => $value)
+        {
+            print $value . "\t";
+        }
+        print "<br>";
+    }
+}
+?>
+
