@@ -1,0 +1,3 @@
+This htdocs folder contains all of our previous work -- we need to integrate it into Laravel. When we're done, we'll
+delete htdocs. I've already started on the migration process by changing the file extensions to '.blade.php'. Get
+familiar with how Laravel handles views, so that these pages can be used for our project.
