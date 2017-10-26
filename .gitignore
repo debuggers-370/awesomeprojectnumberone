@@ -68,3 +68,15 @@ fabric.properties
 /.idea/inspectionProfiles/
 /.idea/sqldialects.xml
 /djangostuff/djangostuff.iml
+
+#currently unversioned files -- keep them in the gitignore for now
+.env.example
+.gitattributes
+artisan
+composer.json
+composer.lock
+package.json
+phpunit.xml
+server.php
+webpack.mix.js
+yarn.lock
