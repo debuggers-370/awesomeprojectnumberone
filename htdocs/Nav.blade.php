@@ -15,16 +15,16 @@
 <!-- Navbar -->
 <div class="w3-top  w3-margin-bottom" id="Navbar">
     <div class="w3-bar w3-white w3-wide w3-padding w3-card-2">
-        <a href="Home.html" class="w3-left w3-bar-item w3-button"><img src="ManageIT.jpg" height="35px" width="35px" alt="ITManage"/></a>
+        <a href="Home.blade.php" class="w3-left w3-bar-item w3-button"><img src="ManageIT.jpg" height="35px" width="35px" alt="ITManage"/></a>
         <meta charset="UTF-8">
         <div class="w3-display-middle">
-            <a href="about.html" class="w3-bar-item w3-button">About</a>
+            <a href="about.blade.php" class="w3-bar-item w3-button">About</a>
 
             <a href="contact.html" class="w3-bar-item w3-button">Contact</a>
-            <a href="Profile.html" class="w3-bar-item w3-button">Profile</a>
-            <a href="carousel.html" class="w3-bar-item w3-button">Carousel Example</a>
+            <a href="Profile.blade.php" class="w3-bar-item w3-button">Profile</a>
+            <a href="carousel.blade.php" class="w3-bar-item w3-button">Carousel Example</a>
         </div>
-        <a href="login.html" class="w3-border-left w3-bar-item w3-button w3-display-right"><b>LOGIN</b></a>
+        <a href="login.blade.php" class="w3-border-left w3-bar-item w3-button w3-display-right"><b>LOGIN</b></a>
     </div>
 </div>
 </body>

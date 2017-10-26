@@ -112,13 +112,12 @@ array_push($user,$_POST['Major']);
 
 
 
-$conn = mysqli_connect("localhost", "root", "rained99", "managedb");
+$conn = mysqli_connect("localhost", "root", "Ainokea4u", "managedb");
 if (mysqli_connect_errno())            # -----------  check connection error
 {
     printf("Connect failed: %s\n", mysqli_connect_error());
     exit(1);
 }
-print("<B> User: </B>");
 print("<br>");
 
 $users = array("user1");

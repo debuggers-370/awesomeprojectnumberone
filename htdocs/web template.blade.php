@@ -18,10 +18,10 @@
         <a href="XinyiHome.html" class="w3-bar-item w3-button"><b>ManageIT</b></a>
         <meta charset="UTF-8">
         <div class="w3-right w3-hide-small">
-            <a href="about.html" class="w3-bar-item w3-button">About</a>
+            <a href="about.blade.php" class="w3-bar-item w3-button">About</a>
             <a href="contact.html" class="w3-bar-item w3-button">Contact</a>
-            <a href="Profile.html" class="w3-bar-item w3-button">Profile</a>
-            <a href="carousel.html" class="w3-bar-item w3-button">Carousel Example</a>
+            <a href="Profile.blade.php" class="w3-bar-item w3-button">Profile</a>
+            <a href="carousel.blade.php" class="w3-bar-item w3-button">Carousel Example</a>
         </div>
         <!-- <link rel="stylesheet" type="text/css" href="customcssStyle.css"> -->
     </div>

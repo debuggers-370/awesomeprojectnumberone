@@ -38,7 +38,7 @@
     <br>
     <a href="#" class="">Forgot username/password?</a>
     <br>
-    <a href="createAccount.html" class="">Create an account?</a>
+    <a href="createAccount.blade.php" class="">Create an account?</a>
 </form>
 
 </div>
