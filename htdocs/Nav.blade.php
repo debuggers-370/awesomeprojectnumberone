@@ -21,7 +21,7 @@
             <a href="about.blade.php" class="w3-bar-item w3-button">About</a>
 
             <a href="contact.html" class="w3-bar-item w3-button">Contact</a>
-            <a href="Profile.blade.php" class="w3-bar-item w3-button">Profile</a>
+            <a href="../public/profile.html" class="w3-bar-item w3-button">Profile</a>
             <a href="carousel.blade.php" class="w3-bar-item w3-button">Carousel Example</a>
         </div>
         <a href="login.blade.php" class="w3-border-left w3-bar-item w3-button w3-display-right"><b>LOGIN</b></a>

@@ -61,7 +61,7 @@
         <!-- Middle Column -->
         <div class="w3-col m7">
             <header class="w3-display-container w3-content w3-wide w3-" style="max-width:1500px;max-height: 800px;" id="home">
-                <img class="w3-image w3-center" src="old-house-hotel-exterior.jpg" alt="pictureOfHouse" width="1500px" height="800px">
+                <img class="w3-image w3-center" src="../public/img/old-house-hotel-exterior.jpg" alt="pictureOfHouse" width="1500px" height="800px">
                 <div class="w3-display-middle w3-margin-top w3-center">
                     <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>ManageIT</b></span> </h1>
                 </div>
