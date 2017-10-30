@@ -20,7 +20,7 @@
                 @if(Auth::check())
                     <a href= "{{ url('profile') }}" class="btn btn-info"> Go to Profile 💼 >></a>
                 @endif
-                <a href= "{{ url('about') }}" class="btn btn-info"> Learn more about us! >></a>
+                <a href= "{{ url('about') }}" class="btn btn-info"> Learn more about us! 📖 >></a>
                 </div>
 
                 <img src = {{asset('img/old-house-hotel-exterior.jpg')}} width="75%" >

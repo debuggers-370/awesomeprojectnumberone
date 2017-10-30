@@ -247,12 +247,12 @@
 <div id = "info2" class="w3-container sand w3-xlarge w3-serif w3-panel w3-round-xlarge" style="padding: 5%">
     <h1 class="w3-xxlarge">What we do</h1>
 
-            <p>At Property Smart, we strive to bring meaningful insight to your property-based
+            <p>At {{ config('app.name', 'Laravel') }}, we strive to bring meaningful insight to your property-based
                 business. Our software gives you a clear view of you properties' capital expenditures, and more
                 importantly, gives you meaningful feedback about how to plan the future. Whether you just want to
                 improve maintenance or build additions, you can know exactly how much it is going to cost, which
-                helps you avoid the hassle of unforeseencosts. Get smart about your property -- Get Property
-                Smart.&nbsp;</p>
+                helps you avoid the hassle of unforeseen costs. Don't guess about your property -- {{ config('app.name','Laravel') }}
+                .&nbsp;</p>
 
 </div>
 <!-- Info section end -->
@@ -314,7 +314,7 @@
 <!-- Contacts section end -->
 
 <footer class="w3-container">
-    <p class="w3-right w3-text-grey">&copy; 2017 Property Smart. All rights reserved.</p>
+    <p class="w3-right w3-text-grey">&copy; 2017 {{ config('app.name', 'Laravel') }}. All rights reserved.</p>
 </footer>
 <script>
     w3.includeHTML();
