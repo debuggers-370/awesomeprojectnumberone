@@ -1,14 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <body class="w3-theme-l5">
-
-
-    <div w3-include-html="Nav.html"></div>
-
     <!-- Page Container -->
-    <div class="w3-container w3-content" style="max-width:1400px;margin-top:80px">
-
         <div class="w3-container w3-center">
             <h1>Profile</h1>
         </div>

@@ -1,12 +1,10 @@
 @extends('layouts.app')
 
-        <!DOCTYPE html>
-<html>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-grey.css">
 <script src="https://www.w3schools.com/lib/w3.js"></script>
-<head>
+
 
     <style>
         html {
@@ -172,7 +170,7 @@
         }
 
     </style>
-</head>
+
 @section('content')
 <!-- header end -->
 
@@ -182,39 +180,39 @@
     <h2 class="w3-myfont w3-center">Meet the team</h2>
     <ul class="w3-ul w3-card-4 w3-round">
         <li class="w3-bar">
-            <img src={{'asset(/img/avatar1.png)'}} class="w3-bar-item w3-circle w3-hide-small" style="width:85px">
+            <img src={{asset('img/avatar1.png')}} class="w3-bar-item w3-circle w3-hide-small" style="width:85px">
             <div class="w3-bar-item">
                 <span class="w3-large">Xinyi Jiang</span><br>
             </div>
         </li>
 
         <li class="w3-bar">
-            <img src= {{'asset(/img/avatar2.png)'}} class="w3-bar-item w3-circle w3-hide-small" style="width:85px">
+            <img src= {{asset('img/avatar2.png')}} class="w3-bar-item w3-circle w3-hide-small" style="width:85px">
             <div class="w3-bar-item">
                 <span class="w3-large">James Martin</span><br>
             </div>
         </li>
 
         <li class="w3-bar">
-            <img src= {{'asset(/img/avatar3.png)'}} class="w3-bar-item w3-circle w3-hide-small" style="width:85px">
+            <img src= {{asset('img/avatar3.png')}} class="w3-bar-item w3-circle w3-hide-small" style="width:85px">
             <div class="w3-bar-item">
                 <span class="w3-large">Catherine Xiao</span><br>
             </div>
         </li>
         <li class="w3-bar">
-            <img src= {{'asset(/img/avatar4.png)'}}  class="w3-bar-item w3-circle w3-hide-small" style="width:85px">
+            <img src= {{asset('img/avatar4.png')}}  class="w3-bar-item w3-circle w3-hide-small" style="width:85px">
             <div class="w3-bar-item">
                 <span class="w3-large">Tony Kang</span><br>
             </div>
         </li>
         <li class="w3-bar">
-            <img src= {{'asset(/img/avatar5.png)'}} w3-bar-item w3-circle w3-hide-small" style="width:85px">
+            <img src= {{asset('img/avatar5.png')}} class="w3-bar-item w3-circle w3-hide-small" style="width:85px">
             <div class="w3-bar-item">
                 <span class="w3-large">Quintin Kauchick</span><br>
             </div>
         </li>
         <li class="w3-bar">
-            <img src= {{'asset(/img/avatar6.png)'}} class="w3-bar-item w3-circle w3-hide-small" style="width:85px">
+            <img src= {{asset('img/avatar6.png')}} class="w3-bar-item w3-circle w3-hide-small" style="width:85px">
             <div class="w3-bar-item">
                 <span class="w3-large">Owen Handel</span><br>
             </div>
@@ -225,20 +223,20 @@
 <!-- dividing part -->
 <div class="w3-row-padding">
     <div class="w3-col s3 w3-container">
-            <img src={{'asset(/img/house1.png)'}} alt="Nature" style="width:100%">
+            <img src={{asset('img/house1.jpg')}} alt="Nature" style="width:100%">
     </div>
     <div class="w3-col s3 w3-container">
-            <img src={{'asset(/img/house2.png)'}} alt="Fjords" style="width:100%">
-
-    </div>
-    <div class="w3-col s3 w3-container">
-
-            <img src={{'asset(/img/house3.png)'}} alt="Mountains" style="width:100%">
+            <img src={{asset('img/house2.jpg')}} alt="Fjords" style="width:100%">
 
     </div>
     <div class="w3-col s3 w3-container">
 
-            <img src={{'asset(/img/house4.png)'}} alt="Lights" style="width:100%">
+            <img src={{asset('img/house3.jpg')}} alt="Mountains" style="width:100%">
+
+    </div>
+    <div class="w3-col s3 w3-container">
+
+            <img src={{asset('img/house4.jpg')}} alt="Lights" style="width:100%">
 
     </div>
 </div><br>
@@ -321,6 +319,5 @@
 <script>
     w3.includeHTML();
 </script>
-</body>
-</html>
+
 @endsection
