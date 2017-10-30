@@ -13,7 +13,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    You are logged in!
+                    You are logged in! <a href= "profile.html" class="btn btn-info"> Go to Profile 💼>></a>
                 </div>
             </div>
         </div>
