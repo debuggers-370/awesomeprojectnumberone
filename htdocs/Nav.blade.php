@@ -15,7 +15,7 @@
 <!-- Navbar -->
 <div class="w3-top  w3-margin-bottom" id="Navbar">
     <div class="w3-bar w3-white w3-wide w3-padding w3-card-2">
-        <a href="Home.blade.php" class="w3-left w3-bar-item w3-button"><img src="ManageIT.jpg" height="35px" width="35px" alt="ITManage"/></a>
+        <a href="Home.blade.php" class="w3-left w3-bar-item w3-button"><img src="../public/img/ManageIT.jpg" height="35px" width="35px" alt="ITManage"/></a>
         <meta charset="UTF-8">
         <div class="w3-display-middle">
             <a href="about.blade.php" class="w3-bar-item w3-button">About</a>

@@ -18,7 +18,7 @@
 
 <div>
 <div class="w3-container w3-display-middle" id="loginform">
-    <img class="w3-center" src="ManageIT.jpg" alt="Logo" style="width: 250px;">
+    <img class="w3-center" src="../public/img/ManageIT.jpg" alt="Logo" style="width: 250px;">
 <form action="#" class=" w3-panel w3-padding-32 w3-card-4 w3-light-grey">
     <h1>FIND ID/PASSWORD</h1>
 
