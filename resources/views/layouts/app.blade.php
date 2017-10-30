@@ -66,6 +66,11 @@
                                             {{ csrf_field() }}
                                         </form>
                                     </li>
+                                    <li>
+                                        <a href="{{ route('home') }}">
+                                            Dashboard
+                                        </a>
+                                    </li>
                                 </ul>
                             </li>
                         @endguest
