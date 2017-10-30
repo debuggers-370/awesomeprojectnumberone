@@ -18,7 +18,7 @@
                     <a href= "{{ URL::route('login')}}" class="btn btn-info"> Login>></a>
                 @endif
                 @if(Auth::check())
-                    <a href= "profile.html" class="btn btn-info"> Go to Profile 💼 >></a>
+                    <a href= "{{ url('profile') }}" class="btn btn-info"> Go to Profile 💼 >></a>
                 @endif
                 <a href= "{{ url('about') }}" class="btn btn-info"> Learn more about us! >></a>
                 </div>
