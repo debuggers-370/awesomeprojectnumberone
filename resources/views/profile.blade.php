@@ -24,9 +24,13 @@
         <!-- Left Column -->
         <div class="w3-col m3">
             <!-- Profile -->
+
             <div class="w3-card-2 w3-round w3-white">
+
                 <div class="w3-container">
-                    <h4 class="w3-center">My Profile</h4>
+                    @if(Auth::check())
+                    <h4 class="w3-center">'asdas'</h4>
+                    @endif
                     <p class="w3-center"><img src="http://www.lovemarks.com/wp-content/uploads/profile-avatars/default-avatar-space-astronaut.png" class="w3-circle" style="height:106px;width:106px" alt="Avatar"></p>
                     <hr>
                     <p><a href="profileEdit.html"><i class= "fa-fw w3-margin-right w3-text-theme"></i>Edit profile
@@ -59,14 +63,22 @@
             <!-- Interests -->
             <div class="w3-card-2 w3-round w3-white w3-hide-small">
                 <div class="w3-container">
+
                     <p>Interests</p>
                     <p>
-                        <span class="w3-tag w3-small w3-theme-d5">renovation</span>
+                        <input id="interest1" type="text" class="form-control" name="interest1" value="{{ old('interest1') }}"required autofocus>
+                        <span class="w3-tag w3-small w3-theme-d5"></span>
+                        <input id="interest2" type="text" class="form-control" name="interest2" value="{{ old('interest2') }}"required autofocus>
                         <span class="w3-tag w3-small w3-theme-d4">bathroom</span>
+                        <input id="interest3" type="text" class="form-control" name="interest3" value="{{ old('interest3') }}"required autofocus>
                         <span class="w3-tag w3-small w3-theme-d3">condo</span>
+                        <input id="interest4" type="text" class="form-control" name="interest4" value="{{ old('interest4') }}"required autofocus>
                         <span class="w3-tag w3-small w3-theme-d2">tiles</span>
+                        <input id="interest5" type="text" class="form-control" name="interest5" value="{{ old('interest5') }}"required autofocus>
                         <span class="w3-tag w3-small w3-theme-d1">carpet</span>
+                        <input id="interest6" type="text" class="form-control" name="interest6" value="{{ old('interest6') }}"required autofocus>
                         <span class="w3-tag w3-small w3-theme">apt</span>
+
                         <span class="w3-tag w3-small w3-theme-l1">landscaping</span>
                     </p>
                 </div>

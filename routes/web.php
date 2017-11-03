@@ -22,10 +22,20 @@ Route::get('/about', function () {
 Route::get('/profile', function () {
     return view('profile');
 });
+Route::get('form', function(){
+    return View::make('form');
+});
 
+Route::any('form-submit', function(){
+    var_dump(Input::file('file'));
+});
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home{name?}', 'HomeController@index')->name('home');
+
+Route::post('updatedinterests','UserController@updateInterests')->name('updateinterests');
+
+Route::post('updatedcart', 'UserController@updateCart')->name('updateCart');
 
 

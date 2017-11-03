@@ -1,7 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+
+    <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
@@ -37,10 +38,10 @@
                         <!-- Profile -->
                         <div class="w3-card-2 w3-round w3-white">
                             <div class="w3-container">
-                                <h4 class="w3-center">My Profile</h4>
+                                <h4 class="w3-center">{{Auth::user()->name}}</h4>
                                 <p class="w3-center"><img src="http://www.lovemarks.com/wp-content/uploads/profile-avatars/default-avatar-space-astronaut.png" class="w3-circle" style="height:106px;width:106px" alt="Avatar"></p>
                                 <hr>
-                                <p><a href="profileEdit.html"><i class= "fa-fw w3-margin-right w3-text-theme"></i>Edit profile
+                                <p><a href="profileEdit.html"><i class= "fa-fw w3-margin-right w3-text-theme"></i>Change profile
                                     </a></p>
                                 <p><i class="w3-margin-right w3-text-theme"></i> option2</p>
                                 <p><i class="fa-fw w3-margin-right w3-text-theme"></i> option3</p>
@@ -70,15 +71,24 @@
                         <!-- Interests -->
                         <div class="w3-card-2 w3-round w3-white w3-hide-small">
                             <div class="w3-container">
-                                <p>Interests</p>
-                                <p>
-                                    <span class="w3-tag w3-small w3-theme-d5">renovation</span>
-                                    <span class="w3-tag w3-small w3-theme-d4">bathroom</span>
-                                    <span class="w3-tag w3-small w3-theme-d3">condo</span>
-                                    <span class="w3-tag w3-small w3-theme-d2">tiles</span>
-                                    <span class="w3-tag w3-small w3-theme-d1">carpet</span>
-                                    <span class="w3-tag w3-small w3-theme">apt</span>
-                                    <span class="w3-tag w3-small w3-theme-l1">landscaping</span>
+                                <p> Current Interests</p>
+
+                                <form class="form-horizontal" method="POST" action="{{ route('updateinterests') }}">
+                                    {{ csrf_field() }}
+
+                                    <span class="w3-tag w3-small w3-theme-d5">{{Auth::user()->interests}}</span>
+                                    <span class="w3-tag w3-small w3-theme-d5">{{Auth::user()->interests1}}</span>
+                                    <span class="w3-tag w3-small w3-theme-d5">{{Auth::user()->interests2}}</span>
+                                    <span class="w3-tag w3-small w3-theme-d5">{{Auth::user()->interests3}}</span>
+                                    <span class="w3-tag w3-small w3-theme-d5">{{Auth::user()->interests4}}</span>
+                                    <span class="w3-tag w3-small w3-theme-d5">{{Auth::user()->interests5}}</span>
+
+                                    <input id="interests" type="text" class="form-control" name="interests" value="{{ old('interests') }}" required autofocus>
+
+                                <button type="submit" class="btn btn-basic">
+                                    Add interests
+                                </button>
+                                </form>
                                 </p>
                             </div>
                         </div>
@@ -144,6 +154,18 @@
 
                         <div class="w3-card-2 w3-round w3-white w3-padding-16 w3-center">
                             <p>shopping cart</p>
+                            <form class="form-horizontal" method="POST" action="{{ route('updateCart') }}">
+                                {{ csrf_field() }}
+
+                                <span class="w3-tag w3-small w3-theme-d5">{{Auth::user()->shoppingcart}}</span>
+
+                                <input id="shoppingcart" type="text" class="form-control" name="shoppingcart" value="{{ old('shoppingcart') }}" required autofocus>
+
+                                <button type="submit" class="btn btn-basic">
+                                    Add items
+                                </button>
+
+                            </form>
                         </div>
                         <br>
 

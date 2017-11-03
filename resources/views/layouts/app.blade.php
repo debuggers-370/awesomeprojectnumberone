@@ -79,7 +79,9 @@
             </div>
         </nav>
 
+       {{--@include('layouts.nav')--}}
         @yield('content')
+
     </div>
 
     <!-- Scripts -->
