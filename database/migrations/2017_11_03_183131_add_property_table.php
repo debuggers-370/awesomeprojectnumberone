@@ -12,7 +12,7 @@ class AddPropertyTable extends Migration
     public function up()
     {
         Schema::create('property', function (Blueprint $table){
-            $table->increment('id');
+            $table->increments('id');
             $table->string('name');
             $table->string('owner');
             $table->string('tenant');
