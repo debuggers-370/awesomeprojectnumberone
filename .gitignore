@@ -70,7 +70,6 @@ fabric.properties
 /djangostuff/djangostuff.iml
 
 #currently unversioned files -- keep them in the gitignore for now
-.env.example
 .gitattributes
 artisan
 composer.json
