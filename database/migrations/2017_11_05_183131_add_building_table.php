@@ -1,10 +1,16 @@
 <?php
+/**
+ * Created by IntelliJ IDEA.
+ * User: Owen
+ * Date: 11/5/2017
+ * Time: 2:15 AM
+ */
 
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddPropertyTable extends Migration
+class AddBuildingTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +19,11 @@ class AddPropertyTable extends Migration
      */
     public function up()
     {
-        Schema::create('properties', function (Blueprint $table) {
+        Schema::create('buildings', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id');
-            $table->string('name')->unique();
-            $table->string('owner')->default("Not entered");
-            $table->string('address')->default("Not entered");
+            $table->integer('property_id');
+            $table->string('name')->default("Not entered");
+            $table->string('tenant')->default("not entered");
             $table->timestamps();
         });
     }

@@ -83,7 +83,7 @@
                                     <span class="w3-tag w3-small w3-theme-d5">{{Auth::user()->interests4}}</span>
                                     <span class="w3-tag w3-small w3-theme-d5">{{Auth::user()->interests5}}</span>
 
-                                    <input id="interests" type="text" class="form-control" name="interests" value="{{ old('interests') }}" required autofocus>
+                                    <input id="interests" type="text" class="form-control" name="interests" value="{{ old('interests') }}" >
 
                                 <button type="submit" class="btn btn-basic">
                                     Add interests
@@ -110,9 +110,22 @@
                     <div class="w3-col m7">
 
                         <div class="w3-container w3-card-2 w3-white w3-round w3-margin"><br>
+                            <p>Properties</p>
                             <img src= alt="sell" class="w3-left w3-circle w3-margin-right" style="width:60px">
-                            <span class="w3-right w3-opacity">1 min</span>
-                            <h4>Xinyi</h4><br>
+                            <span class="w3-right w3-opacity"></span>
+
+                            @php ($properties =  DB::table('properties')->get())
+                                @foreach ($properties as $property)
+                                    @if (($property->user_id) === (Auth::user()->id) )
+                                    <a href="{{ route('manageproperty',['id' => $property->id]) }}" class="btn btn-submit"> {{$property->name}} </a>
+                                        <br>
+                                    @endif
+                                @endforeach
+
+                            <br>
+
+                            <a href= "{{ url('addproperty') }}" class="btn btn-info"> Add a property >></a>
+
                             <hr class="w3-clear">
                             <p>condo renovation</p>
                             <div class="w3-row-padding" style="margin:0 -16px">
@@ -159,7 +172,7 @@
 
                                 <span class="w3-tag w3-small w3-theme-d5">{{Auth::user()->shoppingcart}}</span>
 
-                                <input id="shoppingcart" type="text" class="form-control" name="shoppingcart" value="{{ old('shoppingcart') }}" required autofocus>
+                                <input id="shoppingcart" type="text" class="form-control" name="shoppingcart" value="{{ old('shoppingcart') }}" >
 
                                 <button type="submit" class="btn btn-basic">
                                     Add items

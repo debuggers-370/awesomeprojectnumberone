@@ -22,20 +22,38 @@ Route::get('/about', function () {
 Route::get('/profile', function () {
     return view('profile');
 });
-Route::get('form', function(){
+Route::get('form', function () {
     return View::make('form');
 });
 
-Route::any('form-submit', function(){
+Route::any('form-submit', function () {
     var_dump(Input::file('file'));
 });
+
+Route::get('/addproperty', function () {
+    return view('addproperty');
+
+});
+
 
 Auth::routes();
 
 Route::get('/home{name?}', 'HomeController@index')->name('home');
 
-Route::post('updatedinterests','UserController@updateInterests')->name('updateinterests');
+Route::get('manageproperty/{id}', 'ManageProperty@create')->name('manageproperty');
+
+Route::get('managebuilding/{id}', 'ManageBuilding@create')->name('managebuilding');
+
+Route::get('addbuilding/{id}', 'AddBuildings@create')->name('addbuilding');
+
+Route::post('updatedinterests', 'UserController@updateInterests')->name('updateinterests');
 
 Route::post('updatedcart', 'UserController@updateCart')->name('updateCart');
+
+Route::post('updatedproperty', 'RegisterProperty@updateProperty')->name('updateProperty');
+
+Route::post('updatedbuilding/{id}', 'RegisterBuilding@updateBuilding')->name('updateBuilding');
+
+
 
 
