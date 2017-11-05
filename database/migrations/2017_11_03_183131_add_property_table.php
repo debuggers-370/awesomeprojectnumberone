@@ -16,7 +16,7 @@ class AddPropertyTable extends Migration
         Schema::create('properties', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id');
-            $table->string('name')->unique();
+            $table->string('name');
             $table->string('owner')->default("Not entered");
             $table->string('address')->default("Not entered");
             $table->timestamps();
