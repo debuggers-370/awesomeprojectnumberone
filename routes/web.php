@@ -44,6 +44,8 @@ Route::get('manageproperty/{id}', 'ManageProperty@create')->name('manageproperty
 
 Route::get('managebuilding/{id}', 'ManageBuilding@create')->name('managebuilding');
 
+Route::get('manageUnits/{id}', 'ManageUnit@create')->name('manageunit');
+
 Route::get('addbuilding/{id}', 'AddBuildings@create')->name('addbuilding');
 
 Route::post('updatedinterests', 'UserController@updateInterests')->name('updateinterests');

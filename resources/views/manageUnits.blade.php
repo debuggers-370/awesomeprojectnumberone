@@ -7,27 +7,19 @@
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <div class="w3-container w3-center">
-                    <h1>Basic Property Information</h1>
+                    <h1>Basic Unit Information</h1>
                 </div>
 
-                <span class="w3-tag w3-small w3-theme-d5">Property Name: {{$property->name}}</span>
+                <span class="w3-tag w3-small w3-theme-d5">Unit Name/Number: {{$building->name}}</span>
                 <br>
-                <span class="w3-tag w3-small w3-theme-d5">Property Address: {{$property->address}}</span>
+                <span class="w3-tag w3-small w3-theme-d5">Tenant: {{$building->address}}</span>
                 <br>
-                <span class="w3-tag w3-small w3-theme-d5">Property Owner: {{$property->owner}}</span>
+                <span class="w3-tag w3-small w3-theme-d5">Property Owner: {{$building->owner}}</span>
                 <br>
-                <h1>Buildings</h1>
-                <br>
-                @php ($buildings =  DB::table('buildings')->get())
-                @foreach ($buildings as $building)
-                    @if (($building->property_id) === ($property->id) )
-                        <a href="{{ route('managebuilding',['id' => $building->id]) }}" class="btn btn-submit"> {{$building->name}} </a>
-                        <br>
-                    @endif
-                @endforeach
+                {{--
+                the below code is trash. need to remove
+               --}}
 
-
-                <a href="{{ url('addbuilding',['id' => $property->id]) }}" class="btn btn-info"> Add a Building >></a>
 
             </div>
         </div>
