@@ -1,0 +1,44 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Property;
+
+use Illuminate\Http\Request;
+
+use Illuminate\Support\Facades\Auth;
+
+
+class RegisterUnit extends Controller
+{
+    /**
+     * Create a new unit instance.
+     *
+     * @param  Request $request
+     * @return Response
+     */
+
+
+    public function updateUnit(Request $request, $id)
+    {
+
+        $user = Auth::user();
+
+        $building = DB::table('buildings')->where('id', '=', $id)->first();
+
+        $unit = new Unit;
+
+        $unit->building_id = $user->id;
+
+        $unit->name = $request->name;
+
+        $unit->owner = $request->owner;
+
+        $unit->address = $request->address;
+
+        $unit->save();
+
+        return redirect('home');
+
+    }
+}
