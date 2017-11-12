@@ -35,6 +35,8 @@ class RegisterUnit extends Controller
 
     $unit->renter = $request->renter;
 
+    $unit->maintenance = "This unit doesn't have any maintenance requests";
+
     $unit->save();
 
     return view('managebuildings')->with('building', $building);

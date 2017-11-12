@@ -156,10 +156,8 @@
                     <div class="w3-col m2">
                         <div class="w3-card-2 w3-round w3-white w3-center">
                             <div class="w3-container">
-                                <p>notification</p>
-                                <p><strong>bid</strong></p>
-                                <p>Friday 15:00</p>
-                                <p><button class="w3-button w3-block w3-theme-l4 fa fa-arrow-right"></button></p>
+                                <p>Unit maintenance</p>
+                                <a href="{{ url('maintenance') }}" button type="submit" class="btn btn-primary">Request</a>
                             </div>
                         </div>
                         <br>

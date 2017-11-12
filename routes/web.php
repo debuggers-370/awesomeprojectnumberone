@@ -34,6 +34,10 @@ Route::get('/addproperty', function () {
     return view('addproperty');
 
 });
+Route::get('maintenance', function () {
+    return view('maintenance');
+
+});
 
 
 Auth::routes();
@@ -50,6 +54,8 @@ Route::get('addbuilding/{id}', 'AddBuildings@create')->name('addbuilding');
 
 Route::get('addunit/{id}', 'AddUnits@create')->name('addunit');
 
+Route::get('addmaintenance', 'MaintenanceRequest@create')->name('addmaintenance');
+
 Route::post('updatedinterests', 'UserController@updateInterests')->name('updateinterests');
 
 Route::post('updatedcart', 'UserController@updateCart')->name('updateCart');
@@ -59,6 +65,7 @@ Route::post('updatedproperty', 'RegisterProperty@updateProperty')->name('updateP
 Route::post('updatedbuilding/{id}', 'RegisterBuilding@updateBuilding')->name('updateBuilding');
 
 Route::post('updatedunit/{id}', 'RegisterUnit@updateUnits')->name('updateUnit');
+
 
 
 
