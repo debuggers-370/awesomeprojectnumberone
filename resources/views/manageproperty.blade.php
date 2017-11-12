@@ -33,3 +33,13 @@
         </div>
     </div>
 @endsection
+
+<?php
+/*\Cloudinary::config(array(
+    "cloud_name" => "dwunmryjy",
+    "api_key" => "392581967417787",
+    "api_secret" => "Gfvlo-MD4baaYC877MUuglXCVsM"
+));
+echo cl_image_tag("sample.jpg", array( "alt" => "Sample Image" ));
+
+*/?>
