@@ -1,4 +1,10 @@
 <?php
+/**
+ * Created by IntelliJ IDEA.
+ * User: Owen
+ * Date: 11/11/2017
+ * Time: 8:33 PM
+ */
 
 namespace App;
 
@@ -15,11 +21,11 @@ class Unit extends Model
      * @var array
      */
     protected $fillable = [
-        'unit_number', 'tenant'
+        'name', 'renter', 'maintenance'
     ];
 
     public function user()
     {
-        return $this->belongsTo('app\User');
+        return $this->belongsTo('app\Building');
     }
 }

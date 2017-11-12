@@ -19,6 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
+            $table->integer('permissions');
             $table->string('interests')->default("No current interests");
             $table->string('interests1')->default(" ");
             $table->string('interests2')->default(" ");

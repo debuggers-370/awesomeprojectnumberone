@@ -26,7 +26,6 @@
                     @endif
                 @endforeach
 
-
                 <a href="{{ url('addbuilding',['id' => $property->id]) }}" class="btn btn-info"> Add a Building >></a>
 
             </div>

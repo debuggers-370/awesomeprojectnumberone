@@ -34,6 +34,10 @@ Route::get('/addproperty', function () {
     return view('addproperty');
 
 });
+Route::get('maintenance', function () {
+    return view('maintenance');
+
+});
 
 
 Auth::routes();
@@ -44,9 +48,13 @@ Route::get('manageproperty/{id}', 'ManageProperty@create')->name('manageproperty
 
 Route::get('managebuilding/{id}', 'ManageBuilding@create')->name('managebuilding');
 
-Route::get('manageUnits/{id}', 'ManageUnit@create')->name('manageunit');
+Route::get('manageunit/{id}', 'ManageUnit@create')->name('manageunit');
 
 Route::get('addbuilding/{id}', 'AddBuildings@create')->name('addbuilding');
+
+Route::get('addunit/{id}', 'AddUnits@create')->name('addunit');
+
+Route::get('addmaintenance', 'MaintenanceRequest@create')->name('addmaintenance');
 
 Route::post('updatedinterests', 'UserController@updateInterests')->name('updateinterests');
 
@@ -55,6 +63,8 @@ Route::post('updatedcart', 'UserController@updateCart')->name('updateCart');
 Route::post('updatedproperty', 'RegisterProperty@updateProperty')->name('updateProperty');
 
 Route::post('updatedbuilding/{id}', 'RegisterBuilding@updateBuilding')->name('updateBuilding');
+
+Route::post('updatedunit/{id}', 'RegisterUnit@updateUnits')->name('updateUnit');
 
 
 
