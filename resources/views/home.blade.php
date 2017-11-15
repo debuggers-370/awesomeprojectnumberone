@@ -109,8 +109,8 @@
                     <!-- Middle Column -->
                     <div class="w3-col m7">
 
-                        <div class="w3-container w3-card-2 w3-white w3-round w3-margin"><br>
-                            <p>Properties</p>
+                        <div class="w3-container w3-card-2 w3-white w3-round w3-margin w3-xlarge"><br>
+                            <p>Properties </p>
                             <img src= alt="sell" class="w3-left w3-circle w3-margin-right" style="width:60px">
                             <span class="w3-right w3-opacity"></span>
 
@@ -154,16 +154,16 @@
 
                     <!-- Right Column -->
                     <div class="w3-col m2">
-                        <div class="w3-card-2 w3-round w3-white w3-center">
+                        <div class="w3-card-2 w3-round w3-white w3-center" style="width:150%;">
                             <div class="w3-container">
-                                <p>Unit maintenance</p>
-                                <a href="{{ url('maintenance') }}" button type="submit" class="btn btn-primary">Request</a>
+                                <p>Unit Maintenance</p>
+                                <a href="{{ url('maintenance') }}" button type="submit" class="btn btn-primary">View requests</a>
                             </div>
                         </div>
                         <br>
 
 
-                        <div class="w3-card-2 w3-round w3-white w3-padding-16 w3-center">
+                        <div class="w3-card-2 w3-round w3-white w3-padding-16 w3-center" style="width:150%;">
                             <p>shopping cart</p>
                             <form class="form-horizontal" method="POST" action="{{ route('updateCart') }}">
                                 {{ csrf_field() }}
@@ -180,7 +180,7 @@
                         </div>
                         <br>
 
-                        <div class="w3-card-2 w3-round w3-white w3-padding-32 w3-center">
+                        <div class="w3-card-2 w3-round w3-white w3-padding-32 w3-center" style="width:150%;">
                             <p><i class="fa fa-bug w3-xxlarge"></i></p>
                         </div>
 

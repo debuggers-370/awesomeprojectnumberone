@@ -8,16 +8,8 @@
                     <div class="panel-heading">Maintenance Request</div>
 
                     <div class="panel-body">
-                        <form class="form-horizontal" method="GET" action="{{ route('addmaintenance') }}">
+                        <form class="form-horizontal" method="GET" action="{{ route('addmaintenance',['id' => Auth::user()->personalunit])}}">
                             {{ csrf_field() }}
-
-                                <div class="form-group">
-                                    <label for="id" class="col-md-4 control-label">Unit ID Number</label>
-
-                                    <div class="col-md-6">
-                                        <input id="id" type="text" class="form-control" name="id" required>
-                                    </div>
-                                </div>
 
                             <div class="form-group">
                                 <label for="maintenance" class="col-md-4 control-label">Maintenance Needed</label>

@@ -11,6 +11,8 @@
 |
 */
 
+use Illuminate\Support\Facades\Input;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -34,7 +36,7 @@ Route::get('/addproperty', function () {
     return view('addproperty');
 
 });
-Route::get('maintenance', function () {
+Route::get('maintenance/{id}', function () {
     return view('maintenance');
 
 });
@@ -42,7 +44,9 @@ Route::get('maintenance', function () {
 
 Auth::routes();
 
-Route::get('/home{name?}', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/userhome', 'UserHomeController@myform')->name('homeUser');
 
 Route::get('manageproperty/{id}', 'ManageProperty@create')->name('manageproperty');
 
@@ -54,7 +58,7 @@ Route::get('addbuilding/{id}', 'AddBuildings@create')->name('addbuilding');
 
 Route::get('addunit/{id}', 'AddUnits@create')->name('addunit');
 
-Route::get('addmaintenance', 'MaintenanceRequest@create')->name('addmaintenance');
+Route::get('addmaintenance/{id}', 'MaintenanceRequest@create')->name('addmaintenance');
 
 Route::post('updatedinterests', 'UserController@updateInterests')->name('updateinterests');
 
@@ -66,6 +70,13 @@ Route::post('updatedbuilding/{id}', 'RegisterBuilding@updateBuilding')->name('up
 
 Route::post('updatedunit/{id}', 'RegisterUnit@updateUnits')->name('updateUnit');
 
+Route::post('updateduser', 'UserHomeController@addUnit')->name('updateUserUnit');
+
+Route::get('userhome', 'UserHomeController@myform');
+
+Route::post('select-building', ['as'=>'select-building','uses'=>'UserHomeController@selectBuilding']);
+
+Route::post('select-unit', ['as'=>'select-unit','uses'=>'UserHomeController@selectUnit']);
 
 
 
