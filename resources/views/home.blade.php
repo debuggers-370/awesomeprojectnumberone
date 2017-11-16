@@ -157,7 +157,7 @@
                         <div class="w3-card-2 w3-round w3-white w3-center" style="width:150%;">
                             <div class="w3-container">
                                 <p>Unit Maintenance</p>
-                                <a href="{{ url('maintenance') }}" button type="submit" class="btn btn-primary">View requests</a>
+                                <a href="{{ route('viewmaintenance') }}" button type="submit" class="btn btn-primary">View requests</a>
                             </div>
                         </div>
                         <br>

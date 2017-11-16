@@ -10,9 +10,7 @@ namespace App\Http\Controllers;
 
 use App\Unit;
 
-use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
-use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
 
 class MaintenanceRequest extends Controller

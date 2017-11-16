@@ -17,7 +17,11 @@ class ManageUnit
 
         $unit = DB::table('units')->where('id', '=', $id)->first();
 
-        return view('manageunits')->with('unit', $unit);
+        $building = DB::table('buildings')->where('id', '=', $unit->building_id)->first();
+
+        $property = DB::table('properties')->where('id', '=', $building->property_id)->first();
+
+        return view('manageunit')->with('unit', $unit)->with('building', $building)->with('property', $property);
 
     }
 }

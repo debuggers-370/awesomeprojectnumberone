@@ -118,7 +118,7 @@
                                     @php ($units =  DB::table('units')->get())
                                     @foreach ($units as $unit)
                                         @if(($unit->id) === (Auth::user()->personalunit) )
-                                         <span class="w3-tag w3-small w3-theme-d5">{{$unit->name}}</span>
+                                            <a style="color:blue; font-size:120%;" href="{{ route('manageunit',['id' => $unit->id]) }}"> {{$unit->name}} </a>
                                         @endif
                                    @endforeach
                                     <br>
