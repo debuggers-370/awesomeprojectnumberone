@@ -36,6 +36,6 @@ class AddUnitTable extends Migration
      */
     public function down()
     {
-        Schema::drop('unit');
+        Schema::drop('units');
     }
 }
