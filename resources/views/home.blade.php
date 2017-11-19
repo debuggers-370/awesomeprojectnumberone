@@ -39,7 +39,18 @@
                         <div class="w3-card-2 w3-round w3-white">
                             <div class="w3-container">
                                 <h4 class="w3-center">{{Auth::user()->name}}</h4>
-                                <p class="w3-center"><img src="http://www.lovemarks.com/wp-content/uploads/profile-avatars/default-avatar-space-astronaut.png" class="w3-circle" style="height:106px;width:106px" alt="Avatar"></p>
+                                <p class="w3-center"><?php
+                                    \Cloudinary::config(array(
+                                        "cloud_name" => "dwunmryjy",
+                                        "api_key" => "392581967417787",
+                                        "api_secret" => "Gfvlo-MD4baaYC877MUuglXCVsM"
+                                    ));
+                                    $user_Picture = auth::user()->user_profile;
+                                    echo cl_image_tag($user_Picture, array("transformation"=>array(
+                                        array("width"=>106, "height"=>106, "radius"=>106),
+                                        array("width"=>106, "crop"=>"scale")
+                                    )));
+                                    ?></p>
                                 <hr>
                                 <p><a href="profileEdit.html"><i class= "fa-fw w3-margin-right w3-text-theme"></i>Change profile
                                     </a></p>
