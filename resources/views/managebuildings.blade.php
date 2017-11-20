@@ -9,9 +9,21 @@
                 <div class="w3-container w3-center">
                     <h1>Basic Building Information</h1>
                 </div>
-                <span class="w3-tag w3-small w3-theme-d5">Property Name: {{$building->name}}</span>
+                <span class="w3-tag w3-small w3-theme-d5">Property Location: {{$property->name}} </span>
                 <br>
-                <span class="w3-tag w3-small w3-theme-d5">Property Name: {{$building->tenant}}</span>
+                <span class="w3-tag w3-small w3-theme-d5">Building Name: {{$building->name}} </span>
+                <br>
+                <span class="w3-tag w3-small w3-theme-d5">Building Tenant: {{$building->tenant}}</span>
+                    <br>
+                @php ($units =  DB::table('units')->get())
+                @foreach ($units as $unit)
+                    @if (($unit->building_id) === ($building->id) )
+                        <a href="{{ route('manageunit',['id' => $unit->id]) }}" class="btn btn-submit"> {{$unit->name}} </a>
+                        <br>
+                    @endif
+                @endforeach
+
+                <a href="{{ url('addunit',['id' => $building->id]) }}" class="btn btn-info"> Add a Unit >></a>
 
             </div>
         </div>

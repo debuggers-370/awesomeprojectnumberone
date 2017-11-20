@@ -11,6 +11,8 @@
 |
 */
 
+use Illuminate\Support\Facades\Input;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -34,17 +36,34 @@ Route::get('/addproperty', function () {
     return view('addproperty');
 
 });
+Route::get('maintenance/{id}', function () {
+    return view('maintenance');
 
+});
 
 Auth::routes();
 
-Route::get('/home{name?}', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/userhome', 'UserHomeController@myform')->name('homeUser');
 
 Route::get('manageproperty/{id}', 'ManageProperty@create')->name('manageproperty');
 
 Route::get('managebuilding/{id}', 'ManageBuilding@create')->name('managebuilding');
 
+Route::get('manageunit/{id}', 'ManageUnit@create')->name('manageunit');
+
 Route::get('addbuilding/{id}', 'AddBuildings@create')->name('addbuilding');
+
+Route::get('addunit/{id}', 'AddUnits@create')->name('addunit');
+
+Route::get('addmaintenance/{id}', 'MaintenanceRequest@create')->name('addmaintenance');
+
+Route::get('userhome', 'UserHomeController@myform');
+
+Route::get('viewmaintenance', 'ViewMaintenanceRequests@create')->name('viewmaintenance');
+
+Route::get('/charts', 'ChartController@chart')->name('charts');
 
 Route::post('updatedinterests', 'UserController@updateInterests')->name('updateinterests');
 
@@ -54,6 +73,13 @@ Route::post('updatedproperty', 'RegisterProperty@updateProperty')->name('updateP
 
 Route::post('updatedbuilding/{id}', 'RegisterBuilding@updateBuilding')->name('updateBuilding');
 
+Route::post('updatedunit/{id}', 'RegisterUnit@updateUnits')->name('updateUnit');
+
+Route::post('updateduser', 'UserHomeController@addUnit')->name('updateUserUnit');
+
+Route::post('select-building', ['as'=>'select-building','uses'=>'UserHomeController@selectBuilding']);
+
+Route::post('select-unit', ['as'=>'select-unit','uses'=>'UserHomeController@selectUnit']);
 
 
 

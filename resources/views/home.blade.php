@@ -39,7 +39,17 @@
                         <div class="w3-card-2 w3-round w3-white">
                             <div class="w3-container">
                                 <h4 class="w3-center">{{Auth::user()->name}}</h4>
-                                <p class="w3-center"><img src="http://www.lovemarks.com/wp-content/uploads/profile-avatars/default-avatar-space-astronaut.png" class="w3-circle" style="height:106px;width:106px" alt="Avatar"></p>
+                                <p class="w3-center"><?php
+                                    \Cloudinary::config(array(
+                                        "cloud_name" => "dwunmryjy",
+                                        "api_key" => "392581967417787",
+                                        "api_secret" => "Gfvlo-MD4baaYC877MUuglXCVsM"
+                                    ));
+                                    echo cl_image_tag("quintin_itwdco.jpg", array("transformation"=>array(
+                                        array("width"=>106, "height"=>106, "radius"=>106),
+                                        array("width"=>106, "crop"=>"scale")
+                                    )));
+                                    ?></p>
                                 <hr>
                                 <p><a href="profileEdit.html"><i class= "fa-fw w3-margin-right w3-text-theme"></i>Change profile
                                     </a></p>
@@ -109,8 +119,8 @@
                     <!-- Middle Column -->
                     <div class="w3-col m7">
 
-                        <div class="w3-container w3-card-2 w3-white w3-round w3-margin"><br>
-                            <p>Properties</p>
+                        <div class="w3-container w3-card-2 w3-white w3-round w3-margin w3-xlarge"><br>
+                            <p>Properties </p>
                             <img src= alt="sell" class="w3-left w3-circle w3-margin-right" style="width:60px">
                             <span class="w3-right w3-opacity"></span>
 
@@ -154,18 +164,16 @@
 
                     <!-- Right Column -->
                     <div class="w3-col m2">
-                        <div class="w3-card-2 w3-round w3-white w3-center">
+                        <div class="w3-card-2 w3-round w3-white w3-center" style="width:150%;">
                             <div class="w3-container">
-                                <p>notification</p>
-                                <p><strong>bid</strong></p>
-                                <p>Friday 15:00</p>
-                                <p><button class="w3-button w3-block w3-theme-l4 fa fa-arrow-right"></button></p>
+                                <p>Unit Maintenance</p>
+                                <a href="{{ route('viewmaintenance') }}" button type="submit" class="btn btn-primary">View requests</a>
                             </div>
                         </div>
                         <br>
 
 
-                        <div class="w3-card-2 w3-round w3-white w3-padding-16 w3-center">
+                        <div class="w3-card-2 w3-round w3-white w3-padding-16 w3-center" style="width:150%;">
                             <p>shopping cart</p>
                             <form class="form-horizontal" method="POST" action="{{ route('updateCart') }}">
                                 {{ csrf_field() }}
@@ -182,7 +190,7 @@
                         </div>
                         <br>
 
-                        <div class="w3-card-2 w3-round w3-white w3-padding-32 w3-center">
+                        <div class="w3-card-2 w3-round w3-white w3-padding-32 w3-center" style="width:150%;">
                             <p><i class="fa fa-bug w3-xxlarge"></i></p>
                         </div>
 

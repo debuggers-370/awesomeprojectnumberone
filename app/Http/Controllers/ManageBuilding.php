@@ -18,7 +18,9 @@ class ManageBuilding
 
         $building = DB::table('buildings')->where('id', '=', $id)->first();
 
-        return view('managebuildings')->with('building', $building);
+        $property = DB::table('properties')->where('id', '=', $building->property_id)->first();
+
+        return view('managebuildings')->with('building', $building)->with('property', $property);
 
     }
 }
