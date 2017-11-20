@@ -1,4 +1,3 @@
-
 @extends('layouts.app')
 
 @section('content')
@@ -70,22 +69,7 @@
                             </div>
                             <br>
 
-                        <?php
 
-                        $reasons = Lava::DataTable();
-
-                        $reasons->addStringColumn('Reasons')
-                            ->addNumberColumn('Percent')
-                            ->addRow(array('Check Reviews', 5))
-                            ->addRow(array('Watch Trailers', 2))
-                            ->addRow(array('See Actors Other Work', 4))
-                            ->addRow(array('Settle Argument', 89));
-                        $chart = Lava::DonutChart('Reasons', $reasons);
-
-                        echo Lava::render('DonutChart','Reasons','Demo1');
-                        echo Lava::render('DonutChart','Reasons','Demo2');
-                        echo Lava::render('DonutChart','Reasons','Demo3');
-                        ?>
 
                             <!-- Interests -->
                             <div class="w3-card-2 w3-round w3-white w3-hide-small">
@@ -124,9 +108,29 @@
 
                             <!-- End Left Column -->
                         </div>
+                        <?php
 
+                        $expenses = Lava::DataTable();
+
+                        $expenses->addStringColumn('Monthly Expenses')
+                            ->addNumberColumn('$')
+                            ->addRow(array('Gas', 25))
+                            ->addRow(array('Water', 70))
+                            ->addRow(array('Electricity', 150))
+                            ->addRow(array('Damages', 89));
+                        $chart = Lava::BarChart('Expenses', $expenses);
+
+                        echo Lava::render('BarChart','Expenses','chart');
+                        ?>
                         <!-- Middle Column -->
                         <div class="w3-col m7">
+
+                            <div class="w3-container w3-card-2 w3-white w3-round w3-margin">
+                                Expenses
+                                <div id="chart">
+
+                                </div>
+                            </div>
 
                             <div class="w3-container w3-card-2 w3-white w3-round w3-margin"><br>
                                 <form class="form-horizontal" method="POST" action="{{ route('updateUserUnit') }}">
