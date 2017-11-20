@@ -63,6 +63,8 @@ Route::get('userhome', 'UserHomeController@myform');
 
 Route::get('viewmaintenance', 'ViewMaintenanceRequests@create')->name('viewmaintenance');
 
+Route::get('/charts', 'ChartController@chart')->name('charts');
+
 Route::post('updatedinterests', 'UserController@updateInterests')->name('updateinterests');
 
 Route::post('updatedcart', 'UserController@updateCart')->name('updateCart');
