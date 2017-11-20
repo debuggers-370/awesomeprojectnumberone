@@ -66,6 +66,8 @@ Route::post('updatedbuilding/{id}', 'RegisterBuilding@updateBuilding')->name('up
 
 Route::post('updatedunit/{id}', 'RegisterUnit@updateUnits')->name('updateUnit');
 
+Route::get('/charts', 'ChartsController@chart');
+
 
 
 

@@ -1,7 +1,7 @@
 <?php
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.5.20 on 2017-11-12.
+ * Generated for Laravel 5.5.21 on 2017-11-17.
  *
  * @author Barry vd. Heuvel <barryvdh@gmail.com>
  * @see https://github.com/barryvdh/laravel-ide-helper
@@ -375,6 +375,18 @@ namespace Illuminate\Support\Facades {
         public static function getProvider($provider)
         {
             return \Illuminate\Foundation\Application::getProvider($provider);
+        }
+        
+        /**
+         * Get the registered service provider instances if any exist.
+         *
+         * @param \Illuminate\Support\ServiceProvider|string $provider
+         * @return array 
+         * @static 
+         */ 
+        public static function getProviders($provider)
+        {
+            return \Illuminate\Foundation\Application::getProviders($provider);
         }
         
         /**
@@ -7410,8 +7422,8 @@ namespace Illuminate\Support\Facades {
          * 
          * Order of precedence: PATH (routing placeholders or custom attributes), GET, BODY
          *
-         * @param string $key the key
-         * @param mixed $default the default value if the parameter key does not exist
+         * @param string $key The key
+         * @param mixed $default The default value if the parameter key does not exist
          * @return mixed 
          * @static 
          */ 
@@ -12187,6 +12199,154 @@ namespace Illuminate\Support\Facades {
  
 }
 
+namespace Khill\Lavacharts\Laravel { 
+
+    class LavachartsFacade {
+        
+        /**
+         * Create a new DataTable
+         * 
+         * If the additional DataTablePlus package is available, then one will
+         * be created, otherwise a standard DataTable is returned.
+         *
+         * @since 3.0.0
+         * @param string $timezone
+         * @return \Khill\Lavacharts\DataTables\DataTable 
+         * @static 
+         */ 
+        public static function DataTable($timezone = null)
+        {
+            return \Khill\Lavacharts\Lavacharts::DataTable($timezone);
+        }
+        
+        /**
+         * Create a new Dashboard
+         *
+         * @since 3.0.0
+         * @param string $label
+         * @return \Khill\Lavacharts\DataTables\DataTable 
+         * @static 
+         */ 
+        public static function Dashboard($label)
+        {
+            return \Khill\Lavacharts\Lavacharts::Dashboard($label);
+        }
+        
+        /**
+         * Create a new ControlWrapper from a Filter
+         *
+         * @since 3.0.0
+         * @uses \Khill\Lavacharts\Values\ElementId
+         * @param \Khill\Lavacharts\Dashboards\Filters\Filter $filter Filter to wrap
+         * @param string $elementId HTML element ID to output the control.
+         * @return \Khill\Lavacharts\Dashboards\ControlWrapper 
+         * @static 
+         */ 
+        public static function ControlWrapper($filter, $elementId)
+        {
+            return \Khill\Lavacharts\Lavacharts::ControlWrapper($filter, $elementId);
+        }
+        
+        /**
+         * Create a new ChartWrapper from a Chart
+         *
+         * @since 3.0.0
+         * @uses \Khill\Lavacharts\Values\ElementId
+         * @param \Khill\Lavacharts\Charts\Chart $chart Chart to wrap
+         * @param string $elementId HTML element ID to output the control.
+         * @return \Khill\Lavacharts\Dashboards\ChartWrapper 
+         * @static 
+         */ 
+        public static function ChartWrapper($chart, $elementId)
+        {
+            return \Khill\Lavacharts\Lavacharts::ChartWrapper($chart, $elementId);
+        }
+        
+        /**
+         * Renders Charts or Dashboards into the page
+         * 
+         * Given a type, label, and HTML element id, this will output
+         * all of the necessary javascript to generate the chart or dashboard.
+         *
+         * @access public
+         * @since 2.0.0
+         * @uses \Khill\Lavacharts\Values\Label
+         * @uses \Khill\Lavacharts\Values\ElementId
+         * @param string $type Type of object to render.
+         * @param string $label Label of the object to render.
+         * @param string $elementId HTML element id to render into.
+         * @param mixed $divDimensions Set true for div creation, or pass an array with height & width
+         * @return string 
+         * @static 
+         */ 
+        public static function render($type, $label, $elementId, $divDimensions = false)
+        {
+            return \Khill\Lavacharts\Lavacharts::render($type, $label, $elementId, $divDimensions);
+        }
+        
+        /**
+         * Outputs the link to the Google JSAPI
+         *
+         * @access public
+         * @since 2.3.0
+         * @return string Google Chart API and lava.js script blocks
+         * @static 
+         */ 
+        public static function jsapi()
+        {
+            return \Khill\Lavacharts\Lavacharts::jsapi();
+        }
+        
+        /**
+         * Checks to see if the given chart or dashboard exists in the volcano storage.
+         *
+         * @access public
+         * @since 2.4.2
+         * @uses \Khill\Lavacharts\Values\Label
+         * @param string $type Type of object to check.
+         * @param string $label Label of the object to check.
+         * @return boolean 
+         * @static 
+         */ 
+        public static function exists($type, $label)
+        {
+            return \Khill\Lavacharts\Lavacharts::exists($type, $label);
+        }
+        
+        /**
+         * Fetches an existing Chart or Dashboard from the volcano storage.
+         *
+         * @access public
+         * @since 3.0.0
+         * @uses \Khill\Lavacharts\Values\Label
+         * @param string $type Type of Chart or Dashboard.
+         * @param string $label Label of the Chart or Dashboard.
+         * @return mixed 
+         * @static 
+         */ 
+        public static function fetch($type, $label)
+        {
+            return \Khill\Lavacharts\Lavacharts::fetch($type, $label);
+        }
+        
+        /**
+         * Stores a existing Chart or Dashboard into the volcano storage.
+         *
+         * @access public
+         * @since 3.0.0
+         * @param \Khill\Lavacharts\Chart|\Khill\Lavacharts\Dashboard $lavaObj Chart or Dashboard.
+         * @return boolean 
+         * @static 
+         */ 
+        public static function store($lavaObj)
+        {
+            return \Khill\Lavacharts\Lavacharts::store($lavaObj);
+        }
+         
+    }
+ 
+}
+
 
 namespace  { 
 
@@ -14299,6 +14459,8 @@ namespace  {
     class Validator extends \Illuminate\Support\Facades\Validator {}
 
     class View extends \Illuminate\Support\Facades\View {}
+
+    class Lava extends \Khill\Lavacharts\Laravel\LavachartsFacade {}
  
 }
 
