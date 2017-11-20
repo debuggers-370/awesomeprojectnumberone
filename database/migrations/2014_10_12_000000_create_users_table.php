@@ -18,8 +18,12 @@ class CreateUsersTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('email')->unique();
+            $table->string('user_profile')->default("quintin_itwdco");
             $table->string('password');
             $table->integer('permissions');
+            $table->integer('personalunit')->default(0);
+            $table->integer('personalbuilding')->default(0);
+            $table->integer('personalproperty')->default(0);
             $table->string('interests')->default("No current interests");
             $table->string('interests1')->default(" ");
             $table->string('interests2')->default(" ");

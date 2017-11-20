@@ -45,7 +45,6 @@
                                         "api_key" => "392581967417787",
                                         "api_secret" => "Gfvlo-MD4baaYC877MUuglXCVsM"
                                     ));
-
                                     echo cl_image_tag("quintin_itwdco.jpg", array("transformation"=>array(
                                         array("width"=>106, "height"=>106, "radius"=>106),
                                         array("width"=>106, "crop"=>"scale")
@@ -59,23 +58,7 @@
                             </div>
                         </div>
                         <br>
-                        <div id="stocks-chart">
 
-                        </div>
-                        <?php
-
-                        $reasons = Lava::DataTable();
-
-                        $reasons->addStringColumn('Reasons')
-                            ->addNumberColumn('Percent')
-                            ->addRow(array('Check Reviews', 5))
-                            ->addRow(array('Watch Trailers', 2))
-                            ->addRow(array('See Actors Other Work', 4))
-                            ->addRow(array('Settle Argument', 89));
-                        $chart = Lava::DonutChart('Reasons', $reasons);
-
-                        echo Lava::render('DonutChart','Reasons','stocks-chart');
-                        ?>
                         <!-- Accordion -->
                         <div class="w3-card-2 w3-round">
                             <div class="w3-white">
@@ -94,6 +77,8 @@
                             </div>
                         </div>
                         <br>
+
+
 
                         <!-- Interests -->
                         <div class="w3-card-2 w3-round w3-white w3-hide-small">
@@ -136,8 +121,8 @@
                     <!-- Middle Column -->
                     <div class="w3-col m7">
 
-                        <div class="w3-container w3-card-2 w3-white w3-round w3-margin"><br>
-                            <p>Properties</p>
+                        <div class="w3-container w3-card-2 w3-white w3-round w3-margin w3-xlarge"><br>
+                            <p>Properties </p>
                             <img src= alt="sell" class="w3-left w3-circle w3-margin-right" style="width:60px">
                             <span class="w3-right w3-opacity"></span>
 
@@ -181,16 +166,16 @@
 
                     <!-- Right Column -->
                     <div class="w3-col m2">
-                        <div class="w3-card-2 w3-round w3-white w3-center">
+                        <div class="w3-card-2 w3-round w3-white w3-center" style="width:150%;">
                             <div class="w3-container">
-                                <p>Unit maintenance</p>
-                                <a href="{{ url('maintenance') }}" button type="submit" class="btn btn-primary">Request</a>
+                                <p>Unit Maintenance</p>
+                                <a href="{{ route('viewmaintenance') }}" button type="submit" class="btn btn-primary">View requests</a>
                             </div>
                         </div>
                         <br>
 
 
-                        <div class="w3-card-2 w3-round w3-white w3-padding-16 w3-center">
+                        <div class="w3-card-2 w3-round w3-white w3-padding-16 w3-center" style="width:150%;">
                             <p>shopping cart</p>
                             <form class="form-horizontal" method="POST" action="{{ route('updateCart') }}">
                                 {{ csrf_field() }}
@@ -207,7 +192,7 @@
                         </div>
                         <br>
 
-                        <div class="w3-card-2 w3-round w3-white w3-padding-32 w3-center">
+                        <div class="w3-card-2 w3-round w3-white w3-padding-32 w3-center" style="width:150%;">
                             <p><i class="fa fa-bug w3-xxlarge"></i></p>
                         </div>
 
@@ -223,40 +208,42 @@
                 <!-- End Page Container -->
             </div>
             <br>
+
+
+            <script>
+                w3.includeHTML();
+                // Accordion
+                function myFunction(id) {
+                    var x = document.getElementById(id);
+                    if (x.className.indexOf("w3-show") == -1) {
+                        x.className += " w3-show";
+                        x.previousElementSibling.className += " w3-theme-d1";
+                    } else {
+                        x.className = x.className.replace("w3-show", "");
+                        x.previousElementSibling.className =
+                            x.previousElementSibling.className.replace(" w3-theme-d1", "");
+                    }
+                }
+                // Used to toggle the menu on smaller screens when clicking on the menu button
+                function openNav() {
+                    var x = document.getElementById("navDemo");
+                    if (x.className.indexOf("w3-show") == -1) {
+                        x.className += " w3-show";
+                    } else {
+                        x.className = x.className.replace(" w3-show", "");
+                    }
+                }
+            </script>
+
+
+
+
+
+
         </div>
     </div>
 </div>
 
 
 @endsection
-@section('scripts')
-<script>
-    w3.includeHTML();
-    // Accordion
-    function myFunction(id) {
-        var x = document.getElementById(id);
-        if (x.className.indexOf("w3-show") == -1) {
-            x.className += " w3-show";
-            x.previousElementSibling.className += " w3-theme-d1";
-        } else {
-            x.className = x.className.replace("w3-show", "");
-            x.previousElementSibling.className =
-                x.previousElementSibling.className.replace(" w3-theme-d1", "");
-        }
-    }
-    // Used to toggle the menu on smaller screens when clicking on the menu button
-    function openNav() {
-        var x = document.getElementById("navDemo");
-        if (x.className.indexOf("w3-show") == -1) {
-            x.className += " w3-show";
-        } else {
-            x.className = x.className.replace(" w3-show", "");
-        }
-    }
-</script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
-<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-@endsection
+
