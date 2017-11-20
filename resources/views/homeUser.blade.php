@@ -70,6 +70,23 @@
                             </div>
                             <br>
 
+                        <?php
+
+                        $reasons = Lava::DataTable();
+
+                        $reasons->addStringColumn('Reasons')
+                            ->addNumberColumn('Percent')
+                            ->addRow(array('Check Reviews', 5))
+                            ->addRow(array('Watch Trailers', 2))
+                            ->addRow(array('See Actors Other Work', 4))
+                            ->addRow(array('Settle Argument', 89));
+                        $chart = Lava::DonutChart('Reasons', $reasons);
+
+                        echo Lava::render('DonutChart','Reasons','Demo1');
+                        echo Lava::render('DonutChart','Reasons','Demo2');
+                        echo Lava::render('DonutChart','Reasons','Demo3');
+                        ?>
+
                             <!-- Interests -->
                             <div class="w3-card-2 w3-round w3-white w3-hide-small">
                                 <div class="w3-container">
