@@ -72,7 +72,6 @@ fabric.properties
 #currently unversioned files -- keep them in the gitignore for now
 .gitattributes
 artisan
-composer.json
 composer.lock
 package.json
 phpunit.xml

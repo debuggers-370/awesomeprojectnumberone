@@ -1,4 +1,3 @@
-
 @extends('layouts.app')
 
 @section('content')
@@ -6,18 +5,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Welcome! 🎉</div>
 
-                    <div class="panel-body">
-                        @if (session('status'))
-                            <div class="alert alert-success">
-                                {{ session('status') }}
-                            </div>
-                        @endif
-                        You are logged in!
-                    </div>
-                </div>
                 <meta charset="UTF-8">
                 <meta name="viewport" content="width=device-width, initial-scale=1">
                 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -29,7 +17,18 @@
 
                 <!-- Page Container -->
                 <div style="max-width:1400px;margin-top:80px">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Welcome! 🎉</div>
 
+                        <div class="panel-body">
+                            @if (session('status'))
+                                <div class="alert alert-success">
+                                    {{ session('status') }}
+                                </div>
+                            @endif
+                            You are logged in!
+                        </div>
+                    </div>
                     <div class="w3-container w3-center">
                         <h1>Dashboard</h1>
                     </div>
@@ -70,6 +69,8 @@
                             </div>
                             <br>
 
+
+
                             <!-- Interests -->
                             <div class="w3-card-2 w3-round w3-white w3-hide-small">
                                 <div class="w3-container">
@@ -107,9 +108,29 @@
 
                             <!-- End Left Column -->
                         </div>
+                        <?php
 
+                        $expenses = Lava::DataTable();
+
+                        $expenses->addStringColumn('Monthly Expenses')
+                            ->addNumberColumn('$')
+                            ->addRow(array('Gas', 25))
+                            ->addRow(array('Water', 70))
+                            ->addRow(array('Electricity', 150))
+                            ->addRow(array('Damages', 89));
+                        $chart = Lava::BarChart('Expenses', $expenses);
+
+                        echo Lava::render('BarChart','Expenses','chart');
+                        ?>
                         <!-- Middle Column -->
                         <div class="w3-col m7">
+
+                            <div class="w3-container w3-card-2 w3-white w3-round w3-margin">
+                                Expenses
+                                <div id="chart">
+
+                                </div>
+                            </div>
 
                             <div class="w3-container w3-card-2 w3-white w3-round w3-margin"><br>
                                 <form class="form-horizontal" method="POST" action="{{ route('updateUserUnit') }}">

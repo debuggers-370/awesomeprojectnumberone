@@ -30,6 +30,6 @@ class AddPropertyTable extends Migration
      */
     public function down()
     {
-        Schema::drop('property');
+        Schema::drop('properties');
     }
 }
