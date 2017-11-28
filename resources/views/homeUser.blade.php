@@ -85,7 +85,7 @@
                                     @php ($units =  DB::table('units')->get())
                                     @foreach ($units as $unit)
                                         @if(($unit->id) === (Auth::user()->personalunit) )
-                                            @php($perunit = $unit)
+                                            @php($perunit = $unit->id)
                                             <a style="color:blue; font-size:120%;" href="{{ route('manageunit',['id' => $unit->id]) }}"> {{$unit->name}} </a>
                                         @endif
                                    @endforeach
@@ -123,15 +123,13 @@
                             <?php
                             if ($perunit == null)
                             {
-                                echo "You're unit is not registered";
+
                             } else {
-                                $perunit = Auth::user()->personalunit;
-                                $gas = DB::table('units')->select('gas')->where('id', $perunit)->first();
-                                $water = DB::table('units')->select('water')->where('id', $perunit)->first();
-                                $electricity = DB::table('units')->select('electricity')->where('id', $perunit)->first();
-                                $damages = DB::table('units')->select('damages')->where('id', $perunit)->first();
 
-
+                                $gas = DB::table('units')->where('id', '=', $perunit)->first()->gas;
+                                $water = DB::table('units')->where('id', '=', $perunit)->first()->water;
+                                $electricity = DB::table('units')->where('id', '=', $perunit)->first()->electricity;
+                                $damages = DB::table('units')->where('id', '=', $perunit)->first()->damages;
 
                             $expenses = Lava::DataTable();
 
