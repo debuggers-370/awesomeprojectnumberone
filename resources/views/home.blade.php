@@ -195,26 +195,10 @@
                         <br>
 
 
-                        <div class="w3-card-2 w3-round w3-white w3-padding-16 w3-center" style="width:150%;">
-                            <p>shopping cart</p>
-                            <form class="form-horizontal" method="POST" action="{{ route('updateCart') }}">
-                                {{ csrf_field() }}
 
-                                <span class="w3-tag w3-small w3-theme-d5">{{Auth::user()->shoppingcart}}</span>
 
-                                <input id="shoppingcart" type="text" class="form-control" name="shoppingcart" value="{{ old('shoppingcart') }}" >
 
-                                <button type="submit" class="btn btn-basic">
-                                    Add items
-                                </button>
 
-                            </form>
-                        </div>
-                        <br>
-
-                        <div class="w3-card-2 w3-round w3-white w3-padding-32 w3-center" style="width:150%;">
-                            <p><i class="fa fa-bug w3-xxlarge"></i></p>
-                        </div>
 
                         <!-- End Right Column -->
                     </div>
