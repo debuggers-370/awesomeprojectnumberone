@@ -14,7 +14,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <style>
             html, body {
-                background-image: url({{asset('img/old-house-hotel-exterior.jpg')}});
+                background-image: url({{asset('img/old-house-hotel-exteriorblu.jpg')}});
                 background-size: cover;
                 background-attachment: fixed;
                 color: #636b6f;
