@@ -108,22 +108,10 @@
 
                             <!-- End Left Column -->
                         </div>
-                        <?php
-
-                        $expenses = Lava::DataTable();
-
-                        $expenses->addStringColumn('Monthly Expenses')
-                            ->addNumberColumn('$')
-                            ->addRow(array('Gas', 25))
-                            ->addRow(array('Water', 70))
-                            ->addRow(array('Electricity', 150))
-                            ->addRow(array('Damages', 89));
-                        $chart = Lava::BarChart('Expenses', $expenses);
-
-                        echo Lava::render('BarChart','Expenses','chart');
-                        ?>
                         <!-- Middle Column -->
                         <div class="w3-col m7">
+
+
 
                             <div class="w3-container w3-card-2 w3-white w3-round w3-margin">
                                 Expenses
@@ -132,6 +120,10 @@
                                 </div>
                             </div>
 
+                            <?php
+                            $perunit = null;
+                            ?>
+
                             <div class="w3-container w3-card-2 w3-white w3-round w3-margin"><br>
                                 <form class="form-horizontal" method="POST" action="{{ route('updateUserUnit') }}">
                                     {{ csrf_field() }}
@@ -139,6 +131,7 @@
                                     @php ($units =  DB::table('units')->get())
                                     @foreach ($units as $unit)
                                         @if(($unit->id) === (Auth::user()->personalunit) )
+                                            @php($perunit = $unit)
                                             <a style="color:blue; font-size:120%;" href="{{ route('manageunit',['id' => $unit->id]) }}"> {{$unit->name}} </a>
                                         @endif
                                    @endforeach
@@ -172,6 +165,33 @@
                                     {!! Form::close() !!}
                                 </form>
                             </div>
+
+                            <?php
+                            if ($perunit == null)
+                            {
+                                echo "You're unit is not registered";
+                            } else {
+                                $perunit = Auth::user()->personalunit;
+                                $gas = DB::table('units')->select('gas')->where('id', $perunit)->first();
+                                $water = DB::table('units')->select('water')->where('id', $perunit)->first();
+                                $electricity = DB::table('units')->select('electricity')->where('id', $perunit)->first();
+                                $damages = DB::table('units')->select('damages')->where('id', $perunit)->first();
+
+
+
+                            $expenses = Lava::DataTable();
+
+                            $expenses->addStringColumn('Monthly Expenses')
+                                ->addNumberColumn('$')
+                                ->addRow(array('Gas', $gas))
+                                ->addRow(array('Water', $water))
+                                ->addRow(array('Electricity', $electricity))
+                                ->addRow(array('Damages', $damages));
+                            $chart = Lava::BarChart('Expenses', $expenses);
+
+                            echo Lava::render('BarChart','Expenses','chart');
+                            }
+                            ?>
 
                             <div class="w3-container w3-card-2 w3-white w3-round w3-margin"><br>
                                 <img src= alt="buy" class="w3-left w3-circle w3-margin-right" style="width:60px">
