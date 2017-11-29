@@ -9,7 +9,7 @@
 
                     <div class="panel-body">
                         <form class="form-horizontal" method="POST"
-                              action="{{ route('managebuilding',$building->id) }}">
+                              action="{{ route('updateUnit',$building->id) }}">
                             {{ csrf_field() }}
 
                             <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
