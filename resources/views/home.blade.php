@@ -53,8 +53,7 @@
                                 <hr>
                                 <p><a href="profileEdit.html"><i class= "fa-fw w3-margin-right w3-text-theme"></i>Change profile
                                     </a></p>
-                                <p><i class="w3-margin-right w3-text-theme"></i> option2</p>
-                                <p><i class="fa-fw w3-margin-right w3-text-theme"></i> option3</p>
+
                             </div>
                         </div>
                         <br>

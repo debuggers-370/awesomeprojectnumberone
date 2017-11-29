@@ -75,6 +75,8 @@ Route::post('updatedbuilding/{id}', 'RegisterBuilding@updateBuilding')->name('up
 
 Route::post('updatedunit/{id}', 'RegisterUnit@updateUnits')->name('updateUnit');
 
+Route::post('updatedrequest/{id}', 'RegisterRequest@updateRequests')->name('updateRequest');
+
 Route::post('updateduser', 'UserHomeController@addUnit')->name('updateUserUnit');
 
 Route::post('select-building', ['as'=>'select-building','uses'=>'UserHomeController@selectBuilding']);

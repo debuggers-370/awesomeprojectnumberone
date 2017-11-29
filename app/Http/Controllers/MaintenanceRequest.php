@@ -7,12 +7,12 @@
  */
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Auth;
 use App\Unit;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-
+use App\Mrequest;
 class MaintenanceRequest extends Controller
 {
     /*
@@ -25,10 +25,23 @@ class MaintenanceRequest extends Controller
     public function create(Request $request, $id)
     {
 
-       DB::table('units')->where('id', '=', $id)->update(['maintenance'=>$request->maintenance]);
+       //DB::table('units')->where('id', '=', $id)->update(['maintenance'=>$request->maintenance]);
 
        $request->session()->flash('status', 'Your maintenance request was submitted');
 
-       return redirect('userhome');
+        $mrequest = new Mrequest;
+
+        $unit = DB::table('units')->where('id', '=', $id)->first();
+
+        $mrequest->unit_id = $unit->id;
+
+        $mrequest->maintenance = $request->maintenance;
+
+
+
+        $mrequest->save();
+
+        return redirect('userhome');
+
     }
 }
