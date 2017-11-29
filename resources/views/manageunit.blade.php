@@ -17,7 +17,7 @@
                 <br>
                 <span class="w3-tag w3-small w3-theme-d5">Unit Renter: {{$unit->renter}}</span>
                 <br>
-                <span class="w3-tag w3-small w3-theme-d5">Unit Maintenance: {{$unit->maintenance}}</span>
+                <span class="w3-tag w3-small w3-theme-d5">Unit Maintenance: {{$request->maintenance}}</span>
             </div>
         </div>
     </div>
