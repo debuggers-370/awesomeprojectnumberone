@@ -18,10 +18,10 @@
                                                    @foreach($requests as $request)
                                                         @if($request->unit_id === $unit ->id && $unit->building_id === $building->id && $building->property_id === $property->id)
                                                             @if($request->status == false)
-                                                             {{$unit->name}}: {{$request->maintenance}} {{"-------requests unresolved"}}
+                                                            <a href="{{ route('manageunit',['id' => $request->id]) }}"> {{$unit->name}}: {{$request->maintenance}} {{"-------requests unresolved"}} </a>
                                                                 <br>
                                                                 @else
-                                                                 {{$unit->name}}: {{$request->maintenance}} {{"------requests resolved"}}
+                                                                <a href="{{ route('manageunit',['id' => $request->id]) }}"> {{$unit->name}}: {{$request->maintenance}} {{"------requests resolved"}} </a>
                                                                 <br>
                                                             @endif
                                                         @endif

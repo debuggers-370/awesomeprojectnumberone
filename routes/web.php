@@ -90,5 +90,7 @@ Route::post('select-building', ['as'=>'select-building','uses'=>'UserHomeControl
 
 Route::post('select-unit', ['as'=>'select-unit','uses'=>'UserHomeController@selectUnit']);
 
+Route::get('updateMaintenanceRequest/{id}','UpdateMaintenance@changeStatus')->name('updateMaintenanceRequest');
+
 
 
