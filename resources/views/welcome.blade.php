@@ -23,8 +23,6 @@
 
                     <a href= "{{ url('about') }}" class="btn btn-info"> Learn more about us! 📖 >></a>
                 </div>
-
-                <img src = {{asset('img/old-house-hotel-exterior.jpg')}} width="100%" >
             </div>
         </div>
     </div>

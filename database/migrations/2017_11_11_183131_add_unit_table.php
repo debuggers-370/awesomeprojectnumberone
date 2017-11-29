@@ -25,6 +25,10 @@ class AddUnitTable extends Migration
             $table->string('name')->default("Not entered");
             $table->string('renter')->default("Not entered");
             $table->string('maintenance')->default("No maintenance is currently needed");
+            $table->double('gas')->default(0.0);
+            $table->double('water')->default(0.0);
+            $table->double('electricity')->default(0.0);
+            $table->double('damages')->default(0.0);
             $table->timestamps();
         });
     }
