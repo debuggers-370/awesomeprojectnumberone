@@ -14,10 +14,19 @@
                                         <p style="font-size:120%;"> {{$building->name}} </p>
                                         @endif
                                             @foreach($units as $unit)
-                                                @if($unit->building_id === $building->id && $building->property_id === $property->id && $unit->maintenance != "This unit doesn't have any maintenance requests")
-                                                    <a href="{{ route('manageunit',['id' => $unit->id]) }}"> {{$unit->name}}: {{$unit->maintenance}} </a>
-                                                    <br>
-                                                @endif
+
+                                                   @foreach($requests as $request)
+                                                        @if($request->unit_id === $unit ->id && $unit->building_id === $building->id && $building->property_id === $property->id)
+                                                            @if($request->status == false)
+                                                             {{$unit->name}}: {{$request->maintenance}} {{"-------requests unresolved"}}
+                                                                <br>
+                                                                @else
+                                                                 {{$unit->name}}: {{$request->maintenance}} {{"------requests resolved"}}
+                                                                <br>
+                                                            @endif
+                                                        @endif
+                                                   @endforeach
+
                                             @endforeach
                                     @endforeach
                                     <br>
