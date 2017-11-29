@@ -82,7 +82,8 @@
                                                 ->addRow(array('Water', $unit->water))
                                                 ->addRow(array('Electricity', $unit->electricity))
                                                 ->addRow(array('Damages', $unit->damages))
-                                                ->addRow(array('Rent', $unit->rent));
+                                                ->addRow(array('Rent', $unit->rent))
+                                                ->addRow(array('Total', $unit->rent + $unit->damages + $unit->electricity + $unit->water + $unit->gas));
                                             $chart = Lava::BarChart('Expenses', $expenses);
 
                                             echo Lava::render('BarChart','Expenses','chart');
@@ -99,8 +100,10 @@
                                     @foreach ($units as $unit)
                                         @if(($unit->id) === (Auth::user()->personalunit) )
                                             <a style="color:blue; font-size:120%;" href="{{ route('manageunit',['id' => $unit->id]) }}"> {{$unit->name}} </a>
+
                                         @endif
                                    @endforeach
+
                                     <br>
                                 <img src= alt="sell" class="w3-left w3-circle w3-margin-right" style="width:60px">
                                 <span class="w3-right w3-opacity"></span>
@@ -131,13 +134,6 @@
                                     {!! Form::close() !!}
                                 </form>
                             </div>
-
-                            @php ($units =  DB::table('units')->get())
-                            @foreach ($units as $unit)
-                                @if(($unit->id) === (Auth::user()->personalunit))
-                                   <a> Gas {{$unit->gas}} </a>
-                              @endif
-                            @endforeach
 
                             <!-- End Middle Column -->
                         </div>

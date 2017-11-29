@@ -8,9 +8,7 @@ use Illuminate\Support\Facades\DB;
 class UpdateMaintenance extends Controller
 {
     public function changeStatus($id){
-        DB::table('requests')
-            ->where('id', $id)
-            ->update(['status' => true]);
+        DB::table('requests')->where('id', $id)->update(['status' => 1]);
 
         return redirect('viewmaintenance');
     }
