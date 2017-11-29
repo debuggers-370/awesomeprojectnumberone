@@ -29,7 +29,7 @@
                             You are logged in!
                         </div>
                     </div>
-                    <div class="w3-container w3-center">
+                    <div class="w3-container w3-center" style="color: white">
                         <h1>Dashboard</h1>
                     </div>
                     <!-- The Grid -->
