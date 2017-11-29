@@ -81,7 +81,8 @@
                                                 ->addRow(array('Gas', $unit->gas))
                                                 ->addRow(array('Water', $unit->water))
                                                 ->addRow(array('Electricity', $unit->electricity))
-                                                ->addRow(array('Damages', $unit->damages));
+                                                ->addRow(array('Damages', $unit->damages))
+                                                ->addRow(array('Rent', $unit->rent));
                                             $chart = Lava::BarChart('Expenses', $expenses);
 
                                             echo Lava::render('BarChart','Expenses','chart');
@@ -154,8 +155,8 @@
 
                                 <div class="w3-card-2 w3-round w3-white w3-center" style="width:150%;">
                                     <div class="w3-container">
-                                        <p>Submit Expenses</p>
-                                        <a href="{{ url('expenses',['id' => Auth::user()->personalunit]) }}" button type="submit" class="btn btn-primary">Request</a>
+                                        <p>Manage Utilities</p>
+                                        <a href="{{ url('expenses',['id' => Auth::user()->personalunit]) }}" button type="submit" class="btn btn-primary">Manage</a>
                                     </div>
                                 </div>
                                 <br>

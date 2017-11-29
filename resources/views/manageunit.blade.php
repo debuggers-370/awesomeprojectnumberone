@@ -19,6 +19,7 @@
                 <br>
                 <span class="w3-tag w3-small w3-theme-d5">Unit Maintenance: {{$request->maintenance}}</span>
                 <br>
+
                 @if($request->maintenance ==false)
                 <span class="w3-tag w3-small w3-theme-d5">Unit Maintenance Status: {{"unresolved"}}
                     @else <span class="w3-tag w3-small w3-theme-d5">Unit Maintenance Status: {{"resolved"}}
