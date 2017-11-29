@@ -70,7 +70,7 @@
                             <div class="w3-container w3-card-2 w3-white w3-round w3-margin">
                                 Expenses
                                 <div id="chart">
-
+                                            @if((Auth::user()->personalunit != 0))
                                             <?php
                                             $unit = DB::table('units')->where('id', Auth::user()->personalunit)->first();
 
@@ -86,7 +86,7 @@
 
                                             echo Lava::render('BarChart','Expenses','chart');
                                             ?>
-
+                                            @endif
                                 </div>
                             </div>
 
