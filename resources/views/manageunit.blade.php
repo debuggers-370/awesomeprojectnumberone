@@ -19,10 +19,12 @@
                 <br>
                 <span class="w3-tag w3-small w3-theme-d5">Unit Maintenance: {{$request->maintenance}}</span>
                 <br>
-                @if($request->maintenance ==false)
+                @if($request->status == false)
                 <span class="w3-tag w3-small w3-theme-d5">Unit Maintenance Status: {{"unresolved"}}
-                    @else <span class="w3-tag w3-small w3-theme-d5">Unit Maintenance Status: {{"resolved"}}
-                    @endif
+
+                    @elseif ($request->status == true)
+                        <span class="w3-tag w3-small w3-theme-d5">Unit Maintenance Status: {{"resolved"}}
+                        @endif
                     </span>
                 <br>
                 <a href="{{ route('updateMaintenanceRequest',['id' => $request->id]) }}" button type="submit" class="btn btn-primary">Resolved</a>
