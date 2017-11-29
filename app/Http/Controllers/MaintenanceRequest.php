@@ -37,8 +37,6 @@ class MaintenanceRequest extends Controller
 
         $mrequest->maintenance = $request->maintenance;
 
-
-
         $mrequest->save();
 
         return redirect('userhome');

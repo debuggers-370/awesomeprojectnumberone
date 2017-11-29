@@ -40,6 +40,11 @@ Route::get('maintenance/{id}', function () {
     return view('maintenance');
 
 });
+Route::get('expenses/{id}', function () {
+    return view('expenses');
+
+});
+
 
 Auth::routes();
 
@@ -58,6 +63,8 @@ Route::get('addbuilding/{id}', 'AddBuildings@create')->name('addbuilding');
 Route::get('addunit/{id}', 'AddUnits@create')->name('addunit');
 
 Route::get('addmaintenance/{id}', 'MaintenanceRequest@create')->name('addmaintenance');
+
+Route::get('addexpenses/{id}', 'updateExpenses@create')->name('addexpenses');
 
 Route::get('userhome', 'UserHomeController@myform');
 
@@ -82,6 +89,8 @@ Route::post('updateduser', 'UserHomeController@addUnit')->name('updateUserUnit')
 Route::post('select-building', ['as'=>'select-building','uses'=>'UserHomeController@selectBuilding']);
 
 Route::post('select-unit', ['as'=>'select-unit','uses'=>'UserHomeController@selectUnit']);
+
+Route::get('updateMaintenanceRequest/{id}','UpdateMaintenance@changeStatus')->name('updateMaintenanceRequest');
 
 
 
