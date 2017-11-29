@@ -72,26 +72,20 @@
                         <!-- End Left Column -->
                     </div>
 
+                <?php
 
-<!--                --><?php
-//
-//                $gas = 30;
-//                $water = 40;
-//                $electricity = 190;
-//                $damages = 1000;
-//
-//                $expenses = Lava::DataTable();
-//
-//                $expenses->addStringColumn('Monthly Expenses')
-//                    ->addNumberColumn('$')
-//                    ->addRow(array('Gas', $gas))
-//                    ->addRow(array('Water', $water))
-//                    ->addRow(array('Electricity', $electricity))
-//                    ->addRow(array('Damages', $damages));
-//                $chart = Lava::BarChart('Expenses', $expenses);
-//
-//                echo Lava::render('BarChart','Expenses','chart');
-//                ?>
+                $expenses = Lava::DataTable();
+
+                $expenses->addStringColumn('Monthly Expenses')
+                    ->addNumberColumn('$')
+                    ->addRow(array('Gas', 25))
+                    ->addRow(array('Water', 70))
+                    ->addRow(array('Electricity', 150))
+                    ->addRow(array('Damages', 89));
+                $chart = Lava::BarChart('Expenses', $expenses);
+
+                echo Lava::render('BarChart','Expenses','chart');
+                ?>
 
                     <!-- Middle Column -->
                     <div class="w3-col m7">
