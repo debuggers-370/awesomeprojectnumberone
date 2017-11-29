@@ -29,6 +29,10 @@ class RegisterUnit extends Controller
 
     $building = DB::table('buildings')->where('id', '=', $id)->first();
 
+    $propertyid = $building->property_id;
+
+    $property = DB::table('properties')->where('id', '=', $propertyid)->first();
+
     $unit->building_id = $building->id;
 
     $unit->name = $request->name;
@@ -39,7 +43,7 @@ class RegisterUnit extends Controller
 
     $unit->save();
 
-    return view('managebuildings')->with('building', $building);
+    return view('managebuildings')->with('building', $building)->with('property', $property);
 
     }
 }
