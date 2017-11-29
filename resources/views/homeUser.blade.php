@@ -71,12 +71,24 @@
                                 Expenses
                                 <div id="chart">
 
+                                            <?php
+                                            $unit = DB::table('units')->where('id', Auth::user()->personalunit)->first();
+
+                                            $expenses = Lava::DataTable();
+
+                                            $expenses->addStringColumn('Monthly Expenses')
+                                                ->addNumberColumn('$')
+                                                ->addRow(array('Gas', $unit->gas))
+                                                ->addRow(array('Water', $unit->water))
+                                                ->addRow(array('Electricity', $unit->electricity))
+                                                ->addRow(array('Damages', $unit->damages));
+                                            $chart = Lava::BarChart('Expenses', $expenses);
+
+                                            echo Lava::render('BarChart','Expenses','chart');
+                                            ?>
+
                                 </div>
                             </div>
-
-                            <?php
-                            $perunit = null;
-                            ?>
 
                             <div class="w3-container w3-card-2 w3-white w3-round w3-margin"><br>
                                 <form class="form-horizontal" method="POST" action="{{ route('updateUserUnit') }}">
@@ -85,7 +97,6 @@
                                     @php ($units =  DB::table('units')->get())
                                     @foreach ($units as $unit)
                                         @if(($unit->id) === (Auth::user()->personalunit) )
-                                            @php($perunit = $unit->id)
                                             <a style="color:blue; font-size:120%;" href="{{ route('manageunit',['id' => $unit->id]) }}"> {{$unit->name}} </a>
                                         @endif
                                    @endforeach
@@ -120,31 +131,12 @@
                                 </form>
                             </div>
 
-                            <?php
-                            if ($perunit == null)
-                            {
-
-                            } else {
-
-                                $gas = DB::table('units')->where('id', '=', $perunit)->first()->gas;
-                                $water = DB::table('units')->where('id', '=', $perunit)->first()->water;
-                                $electricity = DB::table('units')->where('id', '=', $perunit)->first()->electricity;
-                                $damages = DB::table('units')->where('id', '=', $perunit)->first()->damages;
-
-                            $expenses = Lava::DataTable();
-
-                            $expenses->addStringColumn('Monthly Expenses')
-                                ->addNumberColumn('$')
-                                ->addRow(array('Gas', $gas))
-                                ->addRow(array('Water', $water))
-                                ->addRow(array('Electricity', $electricity))
-                                ->addRow(array('Damages', $damages));
-                            $chart = Lava::BarChart('Expenses', $expenses);
-
-                            echo Lava::render('BarChart','Expenses','chart');
-                            }
-                            ?>
-
+                            @php ($units =  DB::table('units')->get())
+                            @foreach ($units as $unit)
+                                @if(($unit->id) === (Auth::user()->personalunit))
+                                   <a> Gas {{$unit->gas}} </a>
+                              @endif
+                            @endforeach
 
                             <!-- End Middle Column -->
                         </div>
@@ -160,11 +152,15 @@
                             <br>
 
 
+                                <div class="w3-card-2 w3-round w3-white w3-center" style="width:150%;">
+                                    <div class="w3-container">
+                                        <p>Submit Expenses</p>
+                                        <a href="{{ url('expenses',['id' => Auth::user()->personalunit]) }}" button type="submit" class="btn btn-primary">Request</a>
+                                    </div>
+                                </div>
+                                <br>
 
-
-
-
-                            <!-- End Right Column -->
+                                <!-- End Right Column -->
                         </div>
 
                         <!-- End Grid -->

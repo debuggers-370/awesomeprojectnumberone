@@ -40,6 +40,11 @@ Route::get('maintenance/{id}', function () {
     return view('maintenance');
 
 });
+Route::get('expenses/{id}', function () {
+    return view('expenses');
+
+});
+
 
 Auth::routes();
 
@@ -58,6 +63,8 @@ Route::get('addbuilding/{id}', 'AddBuildings@create')->name('addbuilding');
 Route::get('addunit/{id}', 'AddUnits@create')->name('addunit');
 
 Route::get('addmaintenance/{id}', 'MaintenanceRequest@create')->name('addmaintenance');
+
+Route::get('addexpenses/{id}', 'updateExpenses@create')->name('addexpenses');
 
 Route::get('userhome', 'UserHomeController@myform');
 
