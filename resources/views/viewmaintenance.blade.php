@@ -14,10 +14,21 @@
                                         <p style="font-size:120%;"> {{$building->name}} </p>
                                         @endif
                                             @foreach($units as $unit)
-                                                @if($unit->building_id === $building->id && $building->property_id === $property->id && $unit->maintenance != "This unit doesn't have any maintenance requests")
-                                                    <a href="{{ route('manageunit',['id' => $unit->id]) }}"> {{$unit->name}}: {{$unit->maintenance}} </a>
-                                                    <br>
+                                                @if($unit->building_id === $building->id)
+                                                    <p style="font-size:120%;"> {{$unit->name}} </p>
                                                 @endif
+                                                   @foreach($requests as $request)
+                                                        @if($request->unit_id === $unit ->id && $unit->building_id === $building->id && $building->property_id === $property->id)
+                                                            @if($request->status == false)
+                                                            <a href="{{ route('manageunit',['id' => $request->id]) }}"> {{$unit->name}}: {{$request->maintenance}} {{"-------requests unresolved"}} </a>
+                                                                <br>
+                                                                @else
+                                                                <a href="{{ route('manageunit',['id' => $request->id]) }}"> {{$unit->name}}: {{$request->maintenance}} {{"------requests resolved"}} </a>
+                                                                <br>
+                                                            @endif
+                                                        @endif
+                                                   @endforeach
+
                                             @endforeach
                                     @endforeach
                                     <br>
