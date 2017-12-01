@@ -24,6 +24,16 @@ class MaintenanceRequest extends Controller
 
     public function create(Request $request, $id)
     {
+        \Cloudinary::config(array(
+            "cloud_name" => "dwunmryjy",
+            "api_key" => "392581967417787",
+            "api_secret" => "Gfvlo-MD4baaYC877MUuglXCVsM"
+        ));
+
+        $files = $request->file('picture');
+
+        \Cloudinary\Uploader::upload($files);
+
 
        //DB::table('units')->where('id', '=', $id)->update(['maintenance'=>$request->maintenance]);
 

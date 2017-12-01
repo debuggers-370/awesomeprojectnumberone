@@ -24,6 +24,7 @@ class AddUnitTable extends Migration
             $table->integer('building_id');
             $table->string('name')->default("Not entered");
             $table->string('renter')->default("Not entered");
+            $table->string('file')->default("Not entered");
             $table->string('maintenance')->default("No maintenance is currently needed");
             $table->double('rent')->default(0.0);
             $table->double('gas')->default(0.0);
