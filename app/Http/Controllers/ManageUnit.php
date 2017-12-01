@@ -14,6 +14,7 @@ class ManageUnit
 {
     public function create($id)
     {
+        $request = DB::table('requests')->where('unit_id','=',$id)->first();
 
         $unit = DB::table('units')->where('id', '=', $id)->first();
 
@@ -21,7 +22,7 @@ class ManageUnit
 
         $property = DB::table('properties')->where('id', '=', $building->property_id)->first();
 
-        return view('manageunit')->with('unit', $unit)->with('building', $building)->with('property', $property);
+        return view('manageunit')->with('unit', $unit)->with('building', $building)->with('property', $property)->with('request', $request);
 
     }
 }

@@ -17,7 +17,16 @@
                 <br>
                 <span class="w3-tag w3-small w3-theme-d5">Unit Renter: {{$unit->renter}}</span>
                 <br>
-                <span class="w3-tag w3-small w3-theme-d5">Unit Maintenance: {{$unit->maintenance}}</span>
+                @php ($mrequests =  DB::table('requests')->get())
+                    @foreach($mrequests as $mrequest)
+                        @if($mrequest->unit_id === $unit->id && $mrequest->status === 0)
+                            <span class="w3-tag w3-small w3-theme-d5">Unit Maintenance: {{$mrequest->maintenance}}  <a href="{{ route('updateMaintenanceRequest',['id' => $mrequest->id]) }}" button type="submit" class="btn btn-primary">Resolve</a></span>
+                            <br>
+                        @endif
+                    @endforeach
+
+                <br>
+
             </div>
         </div>
     </div>

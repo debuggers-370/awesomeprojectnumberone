@@ -36,7 +36,18 @@
 
                                 <div class="col-md-6">
                                     <input id="renter" type="text" class="form-control" name="renter" required>
+
                                 </div>
+
+                            </div>
+
+                            <div class="form-group">
+                            <label for="rent" class="col-md-4 control-label">Unit Rent</label>
+
+
+                            <div class="col-md-6">
+                                <input id="rent" type="text" class="form-control" name="rent" required>
+                            </div>
                             </div>
 
                             <div class="form-group">

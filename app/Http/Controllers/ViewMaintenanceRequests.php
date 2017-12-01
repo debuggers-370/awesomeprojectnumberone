@@ -25,7 +25,9 @@ class ViewMaintenanceRequests
 
         $units = DB::table('units')->get();
 
-        return view('viewmaintenance')->with('properties', $properties)->with('buildings', $buildings)->with('units', $units);
+        $requests = DB::table('requests')->get();
+
+        return view('viewmaintenance')->with('properties', $properties)->with('buildings', $buildings)->with('units', $units)->with('requests',$requests);
     }
 
 }

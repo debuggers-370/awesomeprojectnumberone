@@ -26,8 +26,14 @@ class AddUnitTable extends Migration
             $table->string('renter')->default("Not entered");
             $table->string('file')->default("Not entered");
             $table->string('maintenance')->default("No maintenance is currently needed");
+            $table->double('rent')->default(0.0);
+            $table->double('gas')->default(0.0);
+            $table->double('water')->default(0.0);
+            $table->double('electricity')->default(0.0);
+            $table->double('damages')->default(0.0);
             $table->timestamps();
         });
+
     }
 
     /**
@@ -35,6 +41,8 @@ class AddUnitTable extends Migration
      *
      * @return void
      */
+
+
     public function down()
     {
         Schema::drop('units');

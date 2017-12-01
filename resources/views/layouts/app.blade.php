@@ -12,9 +12,21 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <style>
+            html, body {
+                background-image: url({{asset('img/old-house-hotel-exteriorblu.jpg')}});
+                background-size: cover;
+                background-attachment: fixed;
+                color: #636b6f;
+                font-family: 'Raleway', sans-serif;
+                font-weight: 100;
+                height: 100vh;
+                margin: 0;
+            }
 
+        </style>
 </head>
-<body style="background-color:#b8d4dc">
+<body>
     <div id="app">
         <nav class="navbar navbar-default navbar-static-top">
             <div class="container">

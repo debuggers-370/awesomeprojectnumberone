@@ -21,7 +21,7 @@ class Unit extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'renter', 'maintenance'
+        'name', 'renter', 'maintenance','gas','water','electricity','damages'
     ];
 
     public function user()

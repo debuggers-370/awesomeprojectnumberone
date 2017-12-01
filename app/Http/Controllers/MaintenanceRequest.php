@@ -7,12 +7,12 @@
  */
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Auth;
 use App\Unit;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-
+use App\Mrequest;
 class MaintenanceRequest extends Controller
 {
     /*
@@ -35,15 +35,23 @@ class MaintenanceRequest extends Controller
         \Cloudinary\Uploader::upload($files);
 
 
-            DB::table('units')->where('id', '=', $id)->update(['maintenance' => $request->maintenance]);
+       //DB::table('units')->where('id', '=', $id)->update(['maintenance'=>$request->maintenance]);
 
-/*            DB::table('units')->where('id', '=', $id)->update(['files' => "zombie"]);*/
+       $request->session()->flash('status', 'Your maintenance request was submitted');
 
-            $request->session()->flash('status', 'Your maintenance request was submitted');
+        $mrequest = new Mrequest;
 
-            return redirect('userhome');
-        }
+        $unit = DB::table('units')->where('id', '=', $id)->first();
 
+        $mrequest->unit_id = $unit->id;
 
+        $mrequest->maintenance = $request->maintenance;
 
+        $mrequest->status = false;
+
+        $mrequest->save();
+
+        return redirect('userhome');
+
+    }
 }
