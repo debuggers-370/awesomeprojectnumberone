@@ -18,7 +18,7 @@ class AddRequestTable extends Migration
             $table->integer('unit_id');
             $table->string('renter')->default("Not entered");
             $table->string('maintenance')->default("No maintenance is currently needed");
-            $table->boolean('status')->default(false);
+            $table->boolean('status')->default(true);
             $table->timestamps();
              });
     }

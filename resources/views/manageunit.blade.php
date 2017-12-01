@@ -7,7 +7,7 @@
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <div class="w3-container w3-center">
-                    <h1>Basic Maintenance Request Information</h1>
+                    <h1>Basic Unit Information</h1>
                 </div>
                 <span class="w3-tag w3-small w3-theme-d5">Property Location: {{$property->name}} </span>
                 <br>
@@ -17,17 +17,16 @@
                 <br>
                 <span class="w3-tag w3-small w3-theme-d5">Unit Renter: {{$unit->renter}}</span>
                 <br>
-                <span class="w3-tag w3-small w3-theme-d5">Unit Maintenance: {{$request->maintenance}}</span>
-                <br>
-                @if($request->status == false)
-                <span class="w3-tag w3-small w3-theme-d5">Unit Maintenance Status: {{"unresolved"}}
-
-                    @elseif ($request->status == true)
-                        <span class="w3-tag w3-small w3-theme-d5">Unit Maintenance Status: {{"resolved"}}
+                @php ($mrequests =  DB::table('requests')->get())
+                    @foreach($mrequests as $mrequest)
+                        @if($mrequest->unit_id === $unit->id && $mrequest->status === 0)
+                            <span class="w3-tag w3-small w3-theme-d5">Unit Maintenance: {{$mrequest->maintenance}}  <a href="{{ route('updateMaintenanceRequest',['id' => $mrequest->id]) }}" button type="submit" class="btn btn-primary">Resolve</a></span>
+                            <br>
                         @endif
-                    </span>
+                    @endforeach
+
                 <br>
-                <a href="{{ route('updateMaintenanceRequest',['id' => $request->id]) }}" button type="submit" class="btn btn-primary">Resolved</a>
+
             </div>
         </div>
     </div>

@@ -9,6 +9,8 @@
 namespace App\Http\Controllers;
 use App\Unit;
 
+use App\Mrequest;
+
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\DB;
@@ -27,6 +29,8 @@ class RegisterUnit extends Controller
 
     $unit = new Unit;
 
+    $mrequest = new Mrequest;
+
     $building = DB::table('buildings')->where('id', '=', $id)->first();
 
     $propertyid = $building->property_id;
@@ -39,9 +43,15 @@ class RegisterUnit extends Controller
 
     $unit->renter = $request->renter;
 
+    $unit->rent = $request->rent;
+
     $unit->maintenance = "This unit doesn't have any maintenance requests";
 
     $unit->save();
+
+    $mrequest->unit_id = $unit->id;
+
+    $mrequest->save();
 
     return view('managebuildings')->with('building', $building)->with('property', $property);
 
