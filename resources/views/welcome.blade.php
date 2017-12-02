@@ -16,8 +16,11 @@
                 <div>
                 @if(Auth::guest())
                     <a href= "{{ URL::route('login')}}" class="btn btn-info"> Login>></a>
+
+
                 @endif
                 @if(Auth::check())
+
                     <a href= "{{ route('home') }}" class="btn btn-info"> Go to Dashboard 💼 >></a>
                 @endif
 

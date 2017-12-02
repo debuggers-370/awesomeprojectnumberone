@@ -14,6 +14,7 @@
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
             <script src="https://www.w3schools.com/lib/w3.js"></script>
 
+
             <!-- Page Container -->
             <div style="max-width:1400px;margin-top:80px">
                 <div class="panel panel-default">
@@ -28,11 +29,12 @@
                         You are logged in!
                     </div>
                 </div>
-                <div class="w3-container w3-center">
-                    <h1>Dashboard</h1>
+                <div class="w3-center">
+                    <h1 class="w3-text-white">Dashboard</h1>
                 </div>
                 <!-- The Grid -->
                 <div class="w3-row">
+
                     <!-- Left Column -->
                     <div class="w3-col m3">
                         <!-- Profile -->
@@ -88,9 +90,11 @@
                 ?>
 
                     <!-- Middle Column -->
+
                     <div class="w3-col m7">
-                        <div class="w3-container w3-card-2 w3-white w3-round w3-margin">
-                            Expenses
+
+                        <div class="w3-container w3-card-2 w3-white w3-round w3-margin w3-xlarge"><br>
+                            <h> Expenses </h>
                             <div id="chart">
 
                             </div>

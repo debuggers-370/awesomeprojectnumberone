@@ -11,13 +11,7 @@
             margin: 0;
             padding: 0;
         }
-        body {
-            font-family: 'Arial', cursive;
-            font-size: 13pt;
-            background-color: white;
-            padding: 10px;
-            margin: 0;
-        }
+
         #info1{
             background-color: #607D8B;
         }
@@ -176,10 +170,10 @@
 
 <!-- About us section start -->
 
-<div class="w3-container">
+<div class="w3-container w3-white">
     <h2 class="w3-myfont w3-center">Meet the team</h2>
     <ul class="w3-ul w3-card-4 w3-round">
-        <li class="w3-bar">
+        <li class="w3-bar w3-white">
             <img src={{asset('img/avatar1.png')}} class="w3-bar-item w3-circle w3-hide-small" style="width:85px">
             <div class="w3-bar-item">
                 <span class="w3-large">Xinyi Jiang</span><br>
@@ -244,7 +238,7 @@
 <hr>
 <!-- Info section start -->
 
-<div id = "info2" class="w3-container sand w3-xlarge w3-serif w3-panel w3-round-xlarge" style="padding: 5%">
+<div id = "info2" class="w3-container sand w3-xlarge w3-serif w3-panel w3-white w3-round-xlarge" style="padding: 5%">
     <h1 class="w3-xxlarge">What we do</h1>
 
             <p>At {{ config('app.name', 'Laravel') }}, we strive to bring meaningful insight to your property-based
