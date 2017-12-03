@@ -12,6 +12,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
     <style>
             html, body {
                 background-image: url({{asset('img/old-house-hotel-exteriorblu.jpg')}});

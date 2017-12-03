@@ -2,6 +2,36 @@
 
 @section('content')
 
+
+    <header class="social-header ">
+        <div class="social-wrap">
+            <img class="cover-photo" alt="Cover photo" src="https://lh4.googleusercontent.com/-_W03CwaSzBc/UcojMbD8UPI/AAAAAAAABkk/__Xflmn_CLs/s1087-fcrop64=1,201d2ed3dfa7d12b/%25C2%25A9%2BBrian%2BMatiash_untitled-01%2Bcopy%2B2.jpg">
+            <div class="profile-container">
+                <div class="duplicate-image"></div>
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/18320/profile/profile-512.jpg?3" alt="" class="profile-photo" />
+                <span class="name">Hans Engebretsen<span class="title">Internets Designer</span><span class="stats">5,000 Followers | 1 Million views</span></span>
+
+            </div>
+        </div>
+        <nav class="profile-navigation">
+            <a href="" class="toggle">&lsaquo;</a>
+            <ul>
+                <li>About</li>
+                <li>Posts</li>
+                <li>Photos</li>
+                <li>Videos</li>
+            </ul>
+        </nav>
+    </header>
+
+
+
+
+
+
+
+
+
     <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
