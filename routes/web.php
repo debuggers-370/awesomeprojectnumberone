@@ -92,5 +92,10 @@ Route::post('select-unit', ['as'=>'select-unit','uses'=>'UserHomeController@sele
 
 Route::get('updateMaintenanceRequest/{id}','UpdateMaintenance@changeStatus')->name('updateMaintenanceRequest');
 
+Route::get('/changeProfile', 'ChangeProfile@create')->name('changeProfile');
+
+Route::post('/changeProfile', 'ChangeProfile@up')->name('changeProfilePicture');
+
+
 
 
