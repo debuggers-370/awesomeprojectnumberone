@@ -31,8 +31,7 @@ class MaintenanceRequest extends Controller
         ));
 
         $files = $request->file('picture');
-        $orig_name = basename($files);
-        \Cloudinary\Uploader::upload($files,array( "public_id" => $orig_name,));
+        $uploaded = \Cloudinary\Uploader::upload($files,array( "use_filename" => TRUE));
 
 
        //DB::table('units')->where('id', '=', $id)->update(['maintenance'=>$request->maintenance]);
@@ -45,7 +44,7 @@ class MaintenanceRequest extends Controller
 
         $mrequest->unit_id = $unit->id;
 
-        $mrequest->renter = $orig_name;
+        $mrequest->renter = $uploaded['public_id'];
 
         $mrequest->maintenance = $request->maintenance;
 
