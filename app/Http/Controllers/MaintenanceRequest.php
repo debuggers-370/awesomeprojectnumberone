@@ -24,6 +24,16 @@ class MaintenanceRequest extends Controller
 
     public function create(Request $request, $id)
     {
+        \Cloudinary::config(array(
+            "cloud_name" => "dwunmryjy",
+            "api_key" => "392581967417787",
+            "api_secret" => "Gfvlo-MD4baaYC877MUuglXCVsM"
+        ));
+
+        $files = $request->file('picture');
+        $orig_name = basename($files);
+        \Cloudinary\Uploader::upload($files,array( "public_id" => $orig_name,));
+
 
        //DB::table('units')->where('id', '=', $id)->update(['maintenance'=>$request->maintenance]);
 
@@ -35,6 +45,8 @@ class MaintenanceRequest extends Controller
 
         $mrequest->unit_id = $unit->id;
 
+        $mrequest->renter = $orig_name;
+
         $mrequest->maintenance = $request->maintenance;
 
         $mrequest->status = false;
@@ -44,4 +56,5 @@ class MaintenanceRequest extends Controller
         return redirect('userhome');
 
     }
+
 }
