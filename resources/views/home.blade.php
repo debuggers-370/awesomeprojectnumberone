@@ -47,13 +47,14 @@
                                         "api_key" => "392581967417787",
                                         "api_secret" => "Gfvlo-MD4baaYC877MUuglXCVsM"
                                     ));
-                                    echo cl_image_tag("quintin_itwdco.jpg", array("transformation"=>array(
+                                    echo cl_image_tag(Auth::user()->user_profile, array("transformation"=>array(
                                         array("width"=>106, "height"=>106, "radius"=>106),
                                         array("width"=>106, "crop"=>"scale")
                                     )));
                                     ?></p>
                                 <hr>
-                                <p><a href="profileEdit.html"><i class= "fa-fw w3-margin-right w3-text-theme"></i>Change profile
+                                <p>
+                                    <a href="{{ route('changeProfile')}}"><i class= "fa-fw w3-margin-right w3-text-theme"></i>Change profile
                                     </a></p>
 
                             </div>
