@@ -77,17 +77,8 @@
 
                 <?php
 
-                $expenses = Lava::DataTable();
+                $total = DB::table('units')->sum('rent');
 
-                $expenses->addStringColumn('Monthly Expenses')
-                    ->addNumberColumn('$')
-                    ->addRow(array('Gas', 25))
-                    ->addRow(array('Water', 70))
-                    ->addRow(array('Electricity', 150))
-                    ->addRow(array('Damages', 89));
-                $chart = Lava::BarChart('Expenses', $expenses);
-
-                echo Lava::render('BarChart','Expenses','chart');
                 ?>
 
                     <!-- Middle Column -->
@@ -95,10 +86,7 @@
                     <div class="w3-col m7">
 
                         <div class="w3-container w3-card-2 w3-white w3-round w3-margin w3-xlarge"><br>
-                            <h> Expenses </h>
-                            <div id="chart">
-
-                            </div>
+                            <h> Monthly Income: ${{$total}}</h>
                         </div>
                         <div class="w3-container w3-card-2 w3-white w3-round w3-margin w3-xlarge"><br>
                             <p>Properties </p>
