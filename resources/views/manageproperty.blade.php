@@ -5,11 +5,12 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-                <div class="w3-container w3-center">
+            <div class="col-md-10 col-md-offset-1 bg-light">
+                <div class="panel panel-default border border-primary" >
+                <div class="panel-heading">
                     <h1>Basic Property Information</h1>
                 </div>
-
+                <div class="panel-body">
                 <span class="w3-tag w3-small w3-theme-d5">Property Name: {{$property->name}}</span>
                 <br>
                 <span class="w3-tag w3-small w3-theme-d5">Property Address: {{$property->address}}</span>
@@ -17,7 +18,7 @@
                 <span class="w3-tag w3-small w3-theme-d5">Property Owner: {{$property->owner}}</span>
                 <br>
                 <h1>Buildings</h1>
-                <br>
+
                 @php ($buildings =  DB::table('buildings')->get())
                 @foreach ($buildings as $building)
                     @if (($building->property_id) === ($property->id) )
@@ -25,12 +26,15 @@
                         <br>
                     @endif
                 @endforeach
-
+                    <br>
                 <a href="{{ url('addbuilding',['id' => $property->id]) }}" class="btn btn-info"> Add a Building >></a>
-
+                </div>
+                </div>
             </div>
         </div>
     </div>
+
+
 @endsection
 
 <?php

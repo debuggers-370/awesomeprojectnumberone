@@ -62,7 +62,7 @@ Route::get('addbuilding/{id}', 'AddBuildings@create')->name('addbuilding');
 
 Route::get('addunit/{id}', 'AddUnits@create')->name('addunit');
 
-Route::get('addmaintenance/{id}', 'MaintenanceRequest@create')->name('addmaintenance');
+Route::post('addmaintenance/{id}', 'MaintenanceRequest@create')->name('addmaintenance');
 
 Route::get('addexpenses/{id}', 'updateExpenses@create')->name('addexpenses');
 

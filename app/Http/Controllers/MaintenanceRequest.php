@@ -31,8 +31,7 @@ class MaintenanceRequest extends Controller
         ));
 
         $files = $request->file('picture');
-
-        \Cloudinary\Uploader::upload($files);
+        $uploaded = \Cloudinary\Uploader::upload($files,array( "use_filename" => TRUE));
 
 
        //DB::table('units')->where('id', '=', $id)->update(['maintenance'=>$request->maintenance]);
@@ -45,6 +44,8 @@ class MaintenanceRequest extends Controller
 
         $mrequest->unit_id = $unit->id;
 
+        $mrequest->renter = $uploaded['public_id'];
+
         $mrequest->maintenance = $request->maintenance;
 
         $mrequest->status = false;
@@ -54,4 +55,5 @@ class MaintenanceRequest extends Controller
         return redirect('userhome');
 
     }
+
 }

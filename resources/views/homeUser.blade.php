@@ -67,8 +67,8 @@
 
 
 
-                            <div class="w3-container w3-card-2 w3-white w3-round w3-margin">
-                                Expenses
+                            <div class="w3-container w3-card-2 w3-white w3-round w3-margin w3-xlarge">
+                                <h>Expenses</h>
                                 <div id="chart">
                                             @if((Auth::user()->personalunit != 0))
                                             <?php
@@ -93,9 +93,12 @@
                             </div>
 
                             <div class="w3-container w3-card-2 w3-white w3-round w3-margin"><br>
+                                <div class="w3-xlarge">
+                                <p>Properties</p>
+                                </div>
                                 <form class="form-horizontal" method="POST" action="{{ route('updateUserUnit') }}">
                                     {{ csrf_field() }}
-                                    <p>My Unit</p>
+
                                     @php ($units =  DB::table('units')->get())
                                     @foreach ($units as $unit)
                                         @if(($unit->id) === (Auth::user()->personalunit) )
