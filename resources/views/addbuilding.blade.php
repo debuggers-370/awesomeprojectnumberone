@@ -31,13 +31,13 @@
                                 </div>
                             </div>
 
-                            <div class="form-group">
-                                <label for="tenant" class="col-md-4 control-label">Tenant</label>
+                            {{--<div class="form-group">--}}
+                                {{--<label for="tenant" class="col-md-4 control-label">Tenant</label>--}}
 
-                                <div class="col-md-6">
-                                    <input id="tenant" type="text" class="form-control" name="tenant" required>
-                                </div>
-                            </div>
+                                {{--<div class="col-md-6">--}}
+                                    {{--<input id="tenant" type="text" class="form-control" name="tenant" required>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
 
                             <div class="form-group">
                                 <div class="col-md-6 col-md-offset-4">

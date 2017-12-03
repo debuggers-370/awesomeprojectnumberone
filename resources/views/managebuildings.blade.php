@@ -14,9 +14,9 @@
                 <span class="w3-tag w3-small w3-theme-d5">Property Location: {{$property->name}} </span>
                 <br>
                 <span class="w3-tag w3-small w3-theme-d5">Building Name: {{$building->name}} </span>
-                <br>
-                <span class="w3-tag w3-small w3-theme-d5">Building Tenant: {{$building->tenant}}</span>
-                    <br>
+                {{--<br>--}}
+                {{--<span class="w3-tag w3-small w3-theme-d5">Building Tenant: {{$building->tenant}}</span>--}}
+                    {{--<br>--}}
                     <h1>Units</h1>
                 @php ($units =  DB::table('units')->get())
                 @foreach ($units as $unit)

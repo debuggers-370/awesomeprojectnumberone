@@ -35,7 +35,7 @@ class RegisterBuilding extends Controller
 
         $building->name = $request->name;
 
-        $building->tenant = $request->tenant;
+        //$building->tenant = $request->tenant;
 
         $building->save();
 

@@ -17,35 +17,33 @@
 
                 <!-- Page Container -->
                 <div style="max-width:1400px;margin-top:80px">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">Welcome! 🎉</div>
+                    {{--<div class="panel panel-default">--}}
+                        {{--<div class="panel-heading">Welcome! 🎉</div>--}}
 
-                        <div class="panel-body">
-                            @if (session('status'))
-                                <div class="alert alert-success">
-                                    {{ session('status') }}
-                                </div>
-                            @endif
-                            You are logged in!
-                        </div>
-                    </div>
-                    <div class="w3-container w3-center" style="color: white">
-                        <h1>Dashboard</h1>
+                        {{--<div class="panel-body">--}}
+                            {{--@if (session('status'))--}}
+                                {{--<div class="alert alert-success">--}}
+                                    {{--{{ session('status') }}--}}
+                                {{--</div>--}}
+                            {{--@endif--}}
+                            {{--You are logged in!--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                    <div class="col-md-offset-5">
+                        <h1 class="w3-text-white">Dashboard</h1>
                     </div>
                     <!-- The Grid -->
                     <div class="w3-row">
                         <!-- Left Column -->
                         <div class="w3-col m3">
                             <!-- Profile -->
-                            <div class="w3-card-2 w3-round w3-white">
-                                <div class="w3-container">
-                                    <h4 class="w3-center">{{Auth::user()->name}}</h4>
+                            <div class="w3-container w3-card-2 w3-white w3-round w3-margin w3-xlarge">
+                                <div class="w3-container" style="font-size: 15px">
+                                    <h4 class="w3-center" style="font-size: 15px">{{Auth::user()->name}}</h4>
                                     <p class="w3-center"><img src="http://www.lovemarks.com/wp-content/uploads/profile-avatars/default-avatar-space-astronaut.png" class="w3-circle" style="height:106px;width:106px" alt="Avatar"></p>
                                     <hr>
-                                    <p><a href="profileEdit.html"><i class= "fa-fw w3-margin-right w3-text-theme"></i>Change profile
-                                        </a></p>
-
                                 </div>
+                                <p><a href="profileEdit.html" class="btn btn-info" > Change profile </a></p>
                             </div>
                             <br>
 
@@ -143,23 +141,24 @@
 
                         <!-- Right Column -->
                         <div class="w3-col m2">
-                            <div class="w3-card-2 w3-round w3-white w3-center" style="width:150%;">
-                                <div class="w3-container">
-                                    <p>Unit maintenance</p>
-                                    <a href="{{ url('maintenance',['id' => Auth::user()->personalunit]) }}" button type="submit" class="btn btn-primary">Request</a>
-                                </div>
-                            </div>
-                            <br>
+                                    <div class="w3-container w3-card-2 w3-white w3-round w3-margin w3-xlarge" style="width:150%;">
+                                        <div class="container" style="font-size: 15px">
+                                            <p>Unit maintenance</p>
+                                        </div>
+                                        <div class="col-md-offset-3">
+                                            <a href="{{ url('maintenance',['id' => Auth::user()->personalunit]) }}"
+                                               type="submit" class="btn btn-info">Request</a>
+                                        </div>
 
-
-                                <div class="w3-card-2 w3-round w3-white w3-center" style="width:150%;">
-                                    <div class="w3-container">
-                                        <p>Manage Utilities</p>
-                                        <a href="{{ url('expenses',['id' => Auth::user()->personalunit]) }}" button type="submit" class="btn btn-primary">Manage</a>
                                     </div>
-                                </div>
-                                <br>
-
+                                    <div class="w3-container w3-card-2 w3-white w3-round w3-margin w3-xlarge" style="width:150%;">
+                                        <div class="container" style="font-size: 15px">
+                                            <p>Manage Utilities</p>
+                                        </div>
+                                        <div class="col-md-offset-3">
+                                            <a href="{{ url('expenses',['id' => Auth::user()->personalunit]) }}" type="submit" class="btn btn-info">Manage</a>
+                                        </div>
+                                    </div>
                                 <!-- End Right Column -->
                         </div>
 
@@ -167,7 +166,7 @@
                     </div>
 
                     <footer class="w3-container">
-                        <p class="w3-right w3-text-grey">&copy; 2017 {{ config('app.name', 'Laravel') }}. All rights reserved.</p>
+                        <p class="w3-text-white" style="text-align: center">&copy; 2017 {{ config('app.name', 'Laravel') }}. All rights reserved.</p>
                     </footer>
                     <!-- End Page Container -->
                 </div>

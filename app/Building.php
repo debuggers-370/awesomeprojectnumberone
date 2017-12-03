@@ -22,7 +22,7 @@ class Building extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'tenant'
+        'name'
     ];
 
     public function user()

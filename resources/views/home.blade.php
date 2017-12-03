@@ -17,19 +17,19 @@
 
             <!-- Page Container -->
             <div style="max-width:1400px;margin-top:80px">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Welcome! 🎉</div>
+                {{--<div class="panel panel-default">--}}
+                    {{--<div class="panel-heading">Welcome! 🎉</div>--}}
 
-                    <div class="panel-body">
-                        @if (session('status'))
-                            <div class="alert alert-success">
-                                {{ session('status') }}
-                            </div>
-                        @endif
-                        You are logged in!
-                    </div>
-                </div>
-                <div class="w3-center">
+                    {{--<div class="panel-body">--}}
+                        {{--@if (session('status'))--}}
+                            {{--<div class="alert alert-success">--}}
+                                {{--{{ session('status') }}--}}
+                            {{--</div>--}}
+                        {{--@endif--}}
+                        {{--You are logged in!--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+                <div class="col-md-offset-5">
                     <h1 class="w3-text-white">Dashboard</h1>
                 </div>
                 <!-- The Grid -->
@@ -38,10 +38,10 @@
                     <!-- Left Column -->
                     <div class="w3-col m3">
                         <!-- Profile -->
-                        <div class="w3-card-2 w3-round w3-white">
-                            <div class="w3-container">
-                                <h4 class="w3-center">{{Auth::user()->name}}</h4>
-                                <p class="w3-center"><?php
+                        <div class="w3-container w3-card-2 w3-white w3-round w3-margin w3-xlarge" >
+                            <div class="w3-container" style="font-size: 15px">
+                                <h4 class="w3-center" style="font-size: 15px">{{Auth::user()->name}}</h4>
+                                <p class="w3-center" ><?php
                                     \Cloudinary::config(array(
                                         "cloud_name" => "dwunmryjy",
                                         "api_key" => "392581967417787",
@@ -53,10 +53,9 @@
                                     )));
                                     ?></p>
                                 <hr>
-                                <p><a href="profileEdit.html"><i class= "fa-fw w3-margin-right w3-text-theme"></i>Change profile
-                                    </a></p>
 
                             </div>
+                            <a href="profileEdit.html" class="btn btn-info" > Change profile </a>
                         </div>
                         <br>
 
@@ -85,7 +84,12 @@
                     <div class="w3-col m7">
 
                         <div class="w3-container w3-card-2 w3-white w3-round w3-margin w3-xlarge"><br>
-                            <h> Monthly Income: ${{$total}}</h>
+                            <ul>
+                                <li style="font-size: 15px"> Monthly Income: ${{$total}}</li>
+                                <li style="font-size: 15px"> Quarterly Income(Projected): ${{$total*3}}</li>
+                                <li style="font-size: 15px"> Yearly Income(Projected): ${{$total*12}}</li>
+                            </ul>
+
                         </div>
                         <div class="w3-container w3-card-2 w3-white w3-round w3-margin w3-xlarge"><br>
                             <p>Properties </p>
@@ -102,7 +106,7 @@
 
                             <br>
 
-                            <a href= "{{ url('addproperty') }}" class="btn btn-info"> Add a property >></a>
+                            <a href= "{{ url('addproperty') }}" class="btn btn-info"> Add a property 🏡</a>
 
                             <hr class="w3-clear">
 
@@ -114,10 +118,11 @@
 
                     <!-- Right Column -->
                     <div class="w3-col m2">
-                        <div class="w3-card-2 w3-round w3-white w3-center" style="width:150%;">
-                            <div class="w3-container">
+                        <div class="w3-container w3-card-2 w3-white w3-round w3-margin w3-xlarge" style="width:150%;">
+                        <div class="container" style="font-size: 15px">
                                 <p>Unit Maintenance</p>
-                                <a href="{{ route('viewmaintenance') }}" button type="submit" class="btn btn-primary">View requests</a>
+                                <a href="{{ route('viewmaintenance') }}" button type="submit" class="btn btn-info">View
+                                    requests</a>
                             </div>
                         </div>
                         <br>
@@ -135,7 +140,7 @@
                 </div>
 
                 <footer class="w3-container">
-                    <p class="w3-right w3-text-grey">&copy; 2017 {{ config('app.name', 'Laravel') }}. All rights reserved.</p>
+                    <p class="w3-text-white" style="text-align: center">&copy; 2017 {{ config('app.name', 'Laravel') }}. All rights reserved.</p>
                 </footer>
                 <!-- End Page Container -->
             </div>
