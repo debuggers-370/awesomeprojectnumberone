@@ -53,11 +53,11 @@
                                     )));
                                     ?></p>
                                 <hr>
-                                <p>
-                                    <a href="{{ route('changeProfile')}}"><i class= "fa-fw w3-margin-right w3-text-theme"></i>Change profile
-                                    </a></p>
-
                             </div>
+                            <p>
+                                <a href="{{ route('changeProfile')}}" class= "btn btn-info">Change profile</a>
+                            </p>
+
                         </div>
                         <br>
 
@@ -101,7 +101,7 @@
                             @php ($properties =  DB::table('properties')->get())
                                 @foreach ($properties as $property)
                                     @if (($property->user_id) === (Auth::user()->id) )
-                                    <a href="{{ route('manageproperty',['id' => $property->id]) }}" class="btn btn-submit"> {{$property->name}} </a>
+                                    <a href="{{ route('manageproperty',['id' => $property->id]) }}" class="btn btn-info"> {{$property->name}} </a>
                                         <br>
                                     @endif
                                 @endforeach
@@ -123,8 +123,10 @@
                         <div class="w3-container w3-card-2 w3-white w3-round w3-margin w3-xlarge" style="width:150%;">
                         <div class="container" style="font-size: 15px">
                                 <p>Unit Maintenance</p>
-                                <a href="{{ route('viewmaintenance') }}" button type="submit" class="btn btn-info">View
-                                    requests</a>
+                                <p>
+                                    <a href="{{ route('viewmaintenance') }}" button type="submit" class="btn btn-info">View
+                                        requests</a>
+                                </p>
                             </div>
                         </div>
                         <br>

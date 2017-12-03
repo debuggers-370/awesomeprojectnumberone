@@ -92,7 +92,7 @@
 
                             <div class="w3-container w3-card-2 w3-white w3-round w3-margin"><br>
                                 <div class="w3-xlarge">
-                                <p>Properties</p>
+                                <p>My Unit</p>
                                 </div>
                                 <form class="form-horizontal" method="POST" action="{{ route('updateUserUnit') }}">
                                     {{ csrf_field() }}
@@ -100,7 +100,9 @@
                                     @php ($units =  DB::table('units')->get())
                                     @foreach ($units as $unit)
                                         @if(($unit->id) === (Auth::user()->personalunit) )
-                                            <a style="color:blue; font-size:120%;" href="{{ route('manageunit',['id' => $unit->id]) }}"> {{$unit->name}} </a>
+                                            <a class="btn btn-info" href="{{ route('manageunit',['id' => $unit->id])
+                                            }}">
+                                                {{$unit->name}} </a>
 
                                         @endif
                                    @endforeach
@@ -125,7 +127,8 @@
 
                                     <div class="form-group">
                                         <label for="unit" class="col-md-4 control-label">Unit</label>
-                                        {!! Form::select('unit_id',[''=>'--- Select Unit ---'],null,['class'=>'form-control']) !!}
+                                        {!! Form::select('unit_id',[''=>'--- Select Unit ---'],null,
+                                        ['class'=>'form-control']) !!}
                                     </div>
 
                                     <div class="form-group">
@@ -146,8 +149,10 @@
                                             <p>Unit maintenance</p>
                                         </div>
                                         <div class="col-md-offset-3">
-                                            <a href="{{ url('maintenance',['id' => Auth::user()->personalunit]) }}"
-                                               type="submit" class="btn btn-info">Request</a>
+                                            <p>
+                                                <a href="{{ url('maintenance',['id' => Auth::user()->personalunit]) }}"
+                                                   type="submit" class="btn btn-info">Request</a>
+                                            </p>
                                         </div>
 
                                     </div>
@@ -156,7 +161,9 @@
                                             <p>Manage Utilities</p>
                                         </div>
                                         <div class="col-md-offset-3">
-                                            <a href="{{ url('expenses',['id' => Auth::user()->personalunit]) }}" type="submit" class="btn btn-info">Manage</a>
+                                            <p>
+                                                <a href="{{ url('expenses',['id' => Auth::user()->personalunit]) }}" type="submit" class="btn btn-info">Manage</a>
+                                            </p>
                                         </div>
                                     </div>
                                 <!-- End Right Column -->
